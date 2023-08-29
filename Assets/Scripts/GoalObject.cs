@@ -9,7 +9,7 @@ public class GoalObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Goal triggered!");
+        Debug.Log("Goal triggered!" + collision.name);
         OnGoalTriggered?.Invoke(this, collision);
     }
 }

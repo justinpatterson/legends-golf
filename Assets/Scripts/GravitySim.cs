@@ -31,14 +31,14 @@ public class GravitySim : MonoBehaviour
     }
     private void Start()
     {
-        if (hitIndicator)
-            hitIndicator.transform.parent = null; //so that it doesn't get effected by this object's rotation
+        //if (hitIndicator)
+        //    hitIndicator.transform.parent = null; //so that it doesn't get effected by this object's rotation
         //Shoot();
     }
     private void OnDestroy()
     {
-        if (hitIndicator)
-            Destroy(hitIndicator);
+        //if (hitIndicator)
+        //    Destroy(hitIndicator);
     }
 
     private void Update()
@@ -176,5 +176,6 @@ public class GravitySim : MonoBehaviour
         _inMotion = false;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0f;
+        rb.MovePosition(_startPos);
     }
 }

@@ -14,12 +14,13 @@ public class PlayPanel : UIPanel
         base.OpenPanel();
         goButton.onClick.RemoveAllListeners();
         goButton.onClick.AddListener(() => OnGoClicked());
-
+        Debug.Log("Open play panel triggered.");
         GP_Gameplay.OnGameplaySubPhaseStarted += SubPhaseHandler;
     }
 
     private void SubPhaseHandler(GP_Gameplay.GameplayPhases subPhase)
     {
+        Debug.Log("Subphase UI listener fired...");
         EditorPhasePanel.SetActive(subPhase == GP_Gameplay.GameplayPhases.EditorMode);
     }
 

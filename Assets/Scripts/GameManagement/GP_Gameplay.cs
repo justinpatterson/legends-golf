@@ -7,20 +7,26 @@ public class GP_Gameplay : GamePhase
 {
     [SerializeField]
     GameObject _spawnedLevelInstance; //eventually this will be spawned from PF
+    [SerializeField]
+    GameObject levelPrefabReference;
 
     public enum GameplayPhases { Load, EditorMode, Launch, Evaluate }
     public GameplayPhases currentGameplayPhase = GameplayPhases.Load;
 
     public delegate void GameplaySubphaseTransition(GameplayPhases subPhase);
     public static GameplaySubphaseTransition OnGameplaySubPhaseStarted;
-
+    bool _startup = false;
     public override void StartPhase()
     {
         base.StartPhase();
-        SubPhaseTransition(GameplayPhases.Load);
-        SubPhaseTransition(GameplayPhases.EditorMode);
+        _startup = true;//getting around a UI race condition for listening to phase transitions
     }
-
+    public override void UpdatePhase()
+    {
+        base.UpdatePhase();
+        if (_startup) //getting around a UI race condition for listening to phase transitions
+            SubPhaseUpdate();
+    }
     public void SubPhaseTransition(GameplayPhases phase) 
     {
         if(currentGameplayPhase != phase) 
@@ -29,7 +35,6 @@ public class GP_Gameplay : GamePhase
         }
         currentGameplayPhase = phase;
         SubPhaseStart();
-        OnGameplaySubPhaseStarted?.Invoke(phase);
     }
 
     void SubPhaseStart() 
@@ -37,7 +42,9 @@ public class GP_Gameplay : GamePhase
         switch (currentGameplayPhase)
         {
             case GameplayPhases.Load:
+                _spawnedLevelInstance = Instantiate(levelPrefabReference, Vector3.zero, Quaternion.identity) as GameObject;
                 _spawnedLevelInstance.SetActive(true);
+                SubPhaseTransition(GameplayPhases.EditorMode);
                 break;
             case GameplayPhases.EditorMode:
                 {
@@ -69,11 +76,20 @@ public class GP_Gameplay : GamePhase
                 GoalObject.OnGoalTriggered += ReportGoalTriggered;
                 break;
             case GameplayPhases.Evaluate:
+                //Calculate score before going to RESULTS
+                GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Results);
                 break;
         }
+        Debug.Log("STARTING SUBPHASE " + currentGameplayPhase.ToString());
+        OnGameplaySubPhaseStarted?.Invoke(currentGameplayPhase);
     }
     void SubPhaseUpdate() 
     {
+        if (_startup) //race condition if we do it all on StartPhase(); So we essentially need to wait a frame before loading and going into editor.
+        {
+            _startup = false;
+            SubPhaseTransition(GameplayPhases.Load);
+        }
         switch (currentGameplayPhase)
         {
             case GameplayPhases.Load:
@@ -114,8 +130,8 @@ public class GP_Gameplay : GamePhase
         if (collision.gameObject.GetComponent<GravitySim>() != null) 
         {
             _ballReference = collision.gameObject.GetComponent<GravitySim>();
-            _ballReference.gameObject.SetActive(false);
             _ballReference.ResetObject();
+            _ballReference.gameObject.SetActive(false);
             SubPhaseTransition(GameplayPhases.Evaluate);
         }
     }
@@ -128,6 +144,6 @@ public class GP_Gameplay : GamePhase
     public override void EndPhase()
     {
         base.EndPhase();
-        _spawnedLevelInstance.SetActive(false);
+        Destroy(_spawnedLevelInstance);
     }
 }
