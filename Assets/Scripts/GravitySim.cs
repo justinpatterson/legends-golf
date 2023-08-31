@@ -88,7 +88,7 @@ public class GravitySim : MonoBehaviour
         return force;
     }
 
-    void VisualizeTrajectory(int maxIterations = 200, int resolutionMod = 2)
+    void VisualizeTrajectory(int maxIterations = 100, int resolutionMod = 2)
     {
         Vector3 pos = transform.position; 
         Vector3 force = attackDir * attackStrength;
@@ -135,9 +135,11 @@ public class GravitySim : MonoBehaviour
         foreach(Rigidbody2D r in gravityObjs) 
         {
             CircleCollider2D col = r.GetComponent<CircleCollider2D>();
-            float mg = (r.position - pos).magnitude;
-            if (mg <= col.radius)
+            if (col.OverlapPoint(pos))
                 return true;
+            //float mg = (r.position - pos).magnitude;
+            //if (mg <= col.radius)
+            //    return true;
         }
         return false;
     }

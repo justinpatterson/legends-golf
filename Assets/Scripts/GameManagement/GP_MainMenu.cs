@@ -12,7 +12,7 @@ public class GP_MainMenu : GamePhase
 
     public void ReportStartButtonPressed() 
     {
-        GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Gameplay);
+        GameManager.instance.DoPhaseTransition(GameManager.GamePhases.LevelSelect);
     }
 
     public override void EndPhase()
