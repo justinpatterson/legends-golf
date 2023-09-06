@@ -11,7 +11,12 @@ public class PlayerObjectMover : MonoBehaviour
     {
         if (GameManager.instance != null && GameManager.instance.currentPhase != GameManager.GamePhases.Gameplay)
             return;
-
+        if((GP_Gameplay) GameManager.instance.GetCurrentGamePhase() != null) 
+        {
+            GP_Gameplay gpCast = ((GP_Gameplay)GameManager.instance.GetCurrentGamePhase());
+            if (gpCast.currentGameplayPhase != GP_Gameplay.GameplayPhases.EditorMode)
+                return;
+        }
         if (objectTarget == null)
         {
             if (Input.GetMouseButtonDown(0))
