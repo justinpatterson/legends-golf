@@ -328,6 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1003736811}
   - component: {fileID: 1003736810}
+  - component: {fileID: 1003736812}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -382,6 +383,21 @@ Transform:
   - {fileID: 800410462}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1003736812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003736809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac8bf0451d486f4cb6199604f443ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData:
+    playerData:
+      currencyAmt: 0
 --- !u!1 &1081559773
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +532,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnedLevelInstance: {fileID: 0}
   levelPrefabReference: {fileID: 356507367428106387, guid: 65857d36c6b4196428569a553908d495, type: 3}
+  levelPrefabs:
+  - {fileID: 356507367428106387, guid: 65857d36c6b4196428569a553908d495, type: 3}
+  - {fileID: 356507367428106387, guid: 059d0d4db8cabb1489302b67bc58740a, type: 3}
+  - {fileID: 356507367428106387, guid: 2c0e4a6d335038241a7b3ebcad66b41a, type: 3}
   currentGameplayPhase: 0
+  countdown: 5
+  maxCountdown: 30
 --- !u!1 &1662396271
 GameObject:
   m_ObjectHideFlags: 0

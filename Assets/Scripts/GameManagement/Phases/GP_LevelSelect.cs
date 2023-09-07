@@ -11,6 +11,7 @@ public class GP_LevelSelect : GamePhase
 
     public void TriggerLevelLoad(int levelIndex) 
     {
+        GP_Gameplay.levelIndexSelected = levelIndex;
         GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Gameplay);
     }
     public void TriggerBackButton()

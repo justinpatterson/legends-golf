@@ -9,13 +9,22 @@ public class GP_Gameplay : GamePhase
     GameObject _spawnedLevelInstance; //eventually this will be spawned from PF
     [SerializeField]
     GameObject levelPrefabReference;
+    public GameObject[] levelPrefabs;
+    public static int levelIndexSelected = 0;
 
     public enum GameplayPhases { Load, EditorMode, Launch, Evaluate }
     public GameplayPhases currentGameplayPhase = GameplayPhases.Load;
 
     public delegate void GameplaySubphaseTransition(GameplayPhases subPhase);
     public static GameplaySubphaseTransition OnGameplaySubPhaseStarted;
+    public delegate void GameplayTimerUpdate(float time);
+    public static GameplayTimerUpdate OnTimeUpdated;
     bool _startup = false;
+    public float countdown = 5f;
+    public float maxCountdown = 10f;
+
+    Dictionary<string,int> _levelCollectables = new Dictionary<string,int>();
+
     public override void StartPhase()
     {
         base.StartPhase();
@@ -23,9 +32,10 @@ public class GP_Gameplay : GamePhase
     }
     public override void UpdatePhase()
     {
-        base.UpdatePhase();
-        if (_startup) //getting around a UI race condition for listening to phase transitions
-            SubPhaseUpdate();
+        Debug.Log("Updating phase...");
+        base.UpdatePhase(); 
+        SubPhaseUpdate();
+            
     }
     public void SubPhaseTransition(GameplayPhases phase) 
     {
@@ -42,8 +52,17 @@ public class GP_Gameplay : GamePhase
         switch (currentGameplayPhase)
         {
             case GameplayPhases.Load:
+
+                if (levelIndexSelected > levelPrefabs.Length)
+                    levelIndexSelected = 0;
+
+                levelPrefabReference = levelPrefabs[levelIndexSelected];
+                
                 _spawnedLevelInstance = Instantiate(levelPrefabReference, Vector3.zero, Quaternion.identity) as GameObject;
                 _spawnedLevelInstance.SetActive(true);
+
+                _levelCollectables.Clear();
+
                 SubPhaseTransition(GameplayPhases.EditorMode);
                 break;
             case GameplayPhases.EditorMode:
@@ -63,6 +82,7 @@ public class GP_Gameplay : GamePhase
                 break;
             case GameplayPhases.Launch:
                 {
+                    countdown = maxCountdown;
                     //maybe turn this into a subscription event
                     GravitySim gs = FindObjectOfType<GravitySim>();
                     if (gs)
@@ -77,6 +97,8 @@ public class GP_Gameplay : GamePhase
                 break;
             case GameplayPhases.Evaluate:
                 //Calculate score before going to RESULTS
+                //GATHER _levelCollectables
+                _levelCollectables.Clear();
                 GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Results);
                 break;
         }
@@ -85,21 +107,28 @@ public class GP_Gameplay : GamePhase
     }
     void SubPhaseUpdate() 
     {
-        if (_startup) //race condition if we do it all on StartPhase(); So we essentially need to wait a frame before loading and going into editor.
-        {
-            _startup = false;
-            SubPhaseTransition(GameplayPhases.Load);
-        }
-        switch (currentGameplayPhase)
+        Debug.Log("Switching on phase...");
+       switch (currentGameplayPhase)
         {
             case GameplayPhases.Load:
                 break;
             case GameplayPhases.EditorMode:
                 break;
             case GameplayPhases.Launch:
+                countdown-=Time.deltaTime;
+                OnTimeUpdated?.Invoke(countdown);
+                if (countdown<=0f) 
+                {
+                    SetUpEvaluation(false);   
+                }
                 break;
             case GameplayPhases.Evaluate:
                 break;
+        }
+        if (_startup) //race condition if we do it all on StartPhase(); So we essentially need to wait a frame before loading and going into editor.
+        {
+            _startup = false;
+            SubPhaseTransition(GameplayPhases.Load);
         }
     }
     void SubPhaseEnd() 
@@ -130,15 +159,53 @@ public class GP_Gameplay : GamePhase
         if (collision.gameObject.GetComponent<GravitySim>() != null) 
         {
             _ballReference = collision.gameObject.GetComponent<GravitySim>();
+            SetUpEvaluation(true);
+        }
+    }
+
+    public void SetUpEvaluation(bool isSuccess) 
+    {
+        if (_ballReference != null)
+        {
             _ballReference.ResetObject();
             _ballReference.gameObject.SetActive(false);
-            SubPhaseTransition(GameplayPhases.Evaluate);
         }
+        if (isSuccess) 
+        {
+            ResolveCollectedItems();
+        }
+        SubPhaseTransition(GameplayPhases.Evaluate);
     }
 
     public void ReportGravityObjectCollision() 
     {
         //restart level
+        SetUpEvaluation(false);
+    }
+
+    public void ReportCollectibleGathered(string id, int amt) 
+    {
+        if (_levelCollectables.ContainsKey(id)) 
+        {
+            int og_amt = _levelCollectables[id];
+            _levelCollectables[id] = (og_amt + amt);
+        }
+        else
+            _levelCollectables.Add(id,amt);
+    }
+    void ResolveCollectedItems() 
+    {
+        foreach(string item in _levelCollectables.Keys) 
+        {
+            switch (item) 
+            {
+                case "coin":
+                    GameDataManager.instance.gameData.playerData.currencyAmt += _levelCollectables[item];
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public override void EndPhase()

@@ -56,4 +56,16 @@ public class MoveableObject : MonoBehaviour
         targetPos = Vector2.ClampMagnitude(radiusInstance.transform.position, radiusLimiter);
         */
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<GravitySim>() != null)
+        {
+            Debug.Log("TRIGGER HITTING MOVALBE OBJECT");
+            GP_Gameplay gp_phase = (GP_Gameplay)GameManager.instance.GetCurrentGamePhase();
+            if (gp_phase != null)
+            {
+                gp_phase.ReportGravityObjectCollision();
+            }
+        }
+    }
 }
