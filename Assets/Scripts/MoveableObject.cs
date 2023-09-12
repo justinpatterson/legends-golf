@@ -10,7 +10,6 @@ public class MoveableObject : MonoBehaviour
     Vector2 mouseOffset;
     bool _moveInProgress;
     public float movementSpeed = 2f;
-
     public GameObject radiusInstance;
     public float radiusLimiter = 10f;
     float _radiusLimiterColliderOffset = 0f;
@@ -57,6 +56,10 @@ public class MoveableObject : MonoBehaviour
         */
     }
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        TriggerBehavior(collision);
+    }
+    protected virtual void TriggerBehavior(Collider2D collision) 
     {
         if (collision.GetComponent<GravitySim>() != null)
         {

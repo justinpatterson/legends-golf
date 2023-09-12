@@ -9,7 +9,8 @@ public class GP_Gameplay : GamePhase
     GameObject _spawnedLevelInstance; //eventually this will be spawned from PF
     [SerializeField]
     GameObject levelPrefabReference;
-    public GameObject[] levelPrefabs;
+    //public GameObject[] levelPrefabs;
+    public LevelObject[] levels;
     public static int levelIndexSelected = 0;
 
     public enum GameplayPhases { Load, EditorMode, Launch, Evaluate }
@@ -32,7 +33,6 @@ public class GP_Gameplay : GamePhase
     }
     public override void UpdatePhase()
     {
-        Debug.Log("Updating phase...");
         base.UpdatePhase(); 
         SubPhaseUpdate();
             
@@ -53,11 +53,16 @@ public class GP_Gameplay : GamePhase
         {
             case GameplayPhases.Load:
 
-                if (levelIndexSelected > levelPrefabs.Length)
+                if (_spawnedLevelInstance != null)
+                    Destroy(_spawnedLevelInstance);
+
+                if (levelIndexSelected > levels.Length)
                     levelIndexSelected = 0;
 
-                levelPrefabReference = levelPrefabs[levelIndexSelected];
-                
+                strokeCount = 0;
+
+                levelPrefabReference = levels[levelIndexSelected].levelPrefab;
+
                 _spawnedLevelInstance = Instantiate(levelPrefabReference, Vector3.zero, Quaternion.identity) as GameObject;
                 _spawnedLevelInstance.SetActive(true);
 
@@ -70,7 +75,8 @@ public class GP_Gameplay : GamePhase
                     if (_ballReference) { }
                     else
                     {
-                        GravitySim gs = FindObjectOfType<GravitySim>();
+                        //GravitySim gs = FindObjectOfType<GravitySim>();
+                        _ballReference = FindObjectOfType<GravitySim>();
                     }
                     //maybe turn this into a subscription event
                     if (_ballReference)
@@ -82,13 +88,18 @@ public class GP_Gameplay : GamePhase
                 break;
             case GameplayPhases.Launch:
                 {
+                    strokeCount++;
                     countdown = maxCountdown;
                     //maybe turn this into a subscription event
-                    GravitySim gs = FindObjectOfType<GravitySim>();
-                    if (gs)
+                    if (_ballReference == null)
+                    {
+                        _ballReference = FindObjectOfType<GravitySim>();
+                    }
+
+                    if (_ballReference)
                     {
                         Debug.Log("Shoot!");
-                        gs.Shoot();
+                        _ballReference.Shoot();
                     }
                     else
                         Debug.Log("Can't shoot!");
@@ -97,7 +108,13 @@ public class GP_Gameplay : GamePhase
                 break;
             case GameplayPhases.Evaluate:
                 //Calculate score before going to RESULTS
-                //GATHER _levelCollectables
+                int starScore = 3;
+                if (strokeCount == 1) { starScore = 3; }
+                else if (strokeCount < levels[levelIndexSelected].parCount) { starScore = 2; }
+                else starScore = 1;
+                GameDataManager.instance.UpdateStarData(levelIndexSelected, starScore);
+
+                //ResolveCollectedItems() is run in SetUpEvaluation(TRUE)
                 _levelCollectables.Clear();
                 GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Results);
                 break;
@@ -107,7 +124,6 @@ public class GP_Gameplay : GamePhase
     }
     void SubPhaseUpdate() 
     {
-        Debug.Log("Switching on phase...");
        switch (currentGameplayPhase)
         {
             case GameplayPhases.Load:
@@ -154,27 +170,57 @@ public class GP_Gameplay : GamePhase
             SubPhaseTransition(GameplayPhases.Launch);
     }
     GravitySim _ballReference;
+    Coroutine _goalSuctionRoutine;
+    bool goalInProgress = false;
     private void ReportGoalTriggered(GoalObject goal, Collider2D collision)
     {
+        Debug.Log("Goal Triggered!");
+        if (_goalSuctionRoutine != null || goalInProgress == true)
+            return;
+
+        Debug.Log("Starting Routine!");
         if (collision.gameObject.GetComponent<GravitySim>() != null) 
         {
             _ballReference = collision.gameObject.GetComponent<GravitySim>();
-            SetUpEvaluation(true);
+            goalInProgress = true;
+            _goalSuctionRoutine = StartCoroutine(SuctionRoutine(goal, _ballReference));
+            //SetUpEvaluation(true);
         }
     }
+    IEnumerator SuctionRoutine(GoalObject goal, GravitySim gs) 
+    {
+        Debug.Log("SUCTION!");
+        gs.SetGoalSuction(true);
+        
+        while (gs.IsSuctionComplete() == false)
+            yield return new WaitForEndOfFrame();
 
+        SetUpEvaluation(true);
+        _goalSuctionRoutine = null;
+        goalInProgress = false;
+        yield return null;
+    }
+
+
+    public static int strokeCount = 0;
     public void SetUpEvaluation(bool isSuccess) 
     {
         if (_ballReference != null)
         {
+            Debug.Log("Reset ball...");
             _ballReference.ResetObject();
             _ballReference.gameObject.SetActive(false);
         }
         if (isSuccess) 
         {
             ResolveCollectedItems();
+            SubPhaseTransition(GameplayPhases.Evaluate);
         }
-        SubPhaseTransition(GameplayPhases.Evaluate);
+        else 
+        {
+            //we can't "fail" in an educational game for LoL, let them stroke again.
+            SubPhaseTransition(GameplayPhases.EditorMode);
+        }
     }
 
     public void ReportGravityObjectCollision() 

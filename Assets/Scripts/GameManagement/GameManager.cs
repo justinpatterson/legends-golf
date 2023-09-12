@@ -70,7 +70,6 @@ public class GameManager : MonoBehaviour
     }
 
     public GamePhase GetCurrentGamePhase() {
-        Debug.Log("Returning phase... " + _currentPhaseLogic.name);
         return _currentPhaseLogic;
     }
     private void Update()

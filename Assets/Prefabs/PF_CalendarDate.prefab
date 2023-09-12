@@ -171,10 +171,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goButton: {fileID: 4803755995982237762}
+  goButtonText: {fileID: 2369895206747114692}
   levelSelectPanel: {fileID: 0}
   levelIndexRef: 0
   TMPLabel: {fileID: 9221380586448312476}
   strLabel: 
+  stars:
+  - {fileID: 6301213295312478075}
+  - {fileID: 4497512601631552463}
+  - {fileID: 1252205217528685820}
+  star_empty: {fileID: 21300000, guid: 601b6b2ca5b01e443a0ec006eac3382b, type: 3}
+  star_full: {fileID: 21300000, guid: 6e9c5142ed454cd4893ba03a8519faf6, type: 3}
 --- !u!1 &4847993610956812979
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +537,7 @@ RectTransform:
   - {fileID: 4749032281210072391}
   m_Father: {fileID: 2542651614663553868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.9}
+  m_AnchorMin: {x: 0, y: 0.8}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -601,8 +608,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2542651614663553868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.1}
-  m_AnchorMax: {x: 1, y: 0.9}
+  m_AnchorMin: {x: 0, y: 0.2}
+  m_AnchorMax: {x: 1, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -11,6 +11,7 @@ public class PlayPanel : UIPanel
     public GameObject EditorPhasePanel;
     public GameObject LaunchPhasePanel;
     public TextMeshProUGUI launchPhaseCountdown;
+    public TextMeshProUGUI strokeCount, parCount;
 
     public override void OpenPanel()
     {
@@ -27,6 +28,8 @@ public class PlayPanel : UIPanel
         Debug.Log("Subphase UI listener fired...");
         EditorPhasePanel.SetActive(subPhase == GP_Gameplay.GameplayPhases.EditorMode);
         LaunchPhasePanel.SetActive(subPhase == GP_Gameplay.GameplayPhases.Launch);
+
+        strokeCount.text = GP_Gameplay.strokeCount.ToString("00");
     }
     private void LateUpdate()
     {
@@ -48,5 +51,12 @@ public class PlayPanel : UIPanel
         GP_Gameplay gp = (GP_Gameplay) GameManager.instance.GetCurrentGamePhase();
         if (gp != null)
             gp.ReportLaunchButtonPressed();
+    }
+
+    public void OnRestartClicked() 
+    {
+        GP_Gameplay gp = (GP_Gameplay)GameManager.instance.GetCurrentGamePhase();
+        if (gp != null)
+            gp.ReportGravityObjectCollision(); //we should probably make a custom restart function, but this does the same thing for now
     }
 }

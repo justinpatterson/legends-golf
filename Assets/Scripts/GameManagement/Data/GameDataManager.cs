@@ -8,11 +8,50 @@ public class GameDataManager : MonoBehaviour
     [SerializeField]
     public GameData gameData = new GameData();
 
+
+    public GameData.LevelData GetLevelData(int levelIndex, out bool success)
+    {
+        for (int i = 0; i < gameData.levelDataMap.Count; i++)
+        {
+            if (gameData.levelDataMap[i].levelIndex == levelIndex)
+            {
+                success = true;
+                return gameData.levelDataMap[i];
+            }
+        }
+
+        success = false;
+        GameData.LevelData ld = new GameData.LevelData();
+        ld.levelIndex = levelIndex;
+        ld.starCount = 0;
+        gameData.levelDataMap.Add(ld);
+
+        return ld;
+    }
+    public bool UpdateStarData(int levelIndex, int starCount) 
+    {
+        for(int i = 0; i < gameData.levelDataMap.Count; i++) 
+        {
+            if (gameData.levelDataMap[i].levelIndex == levelIndex) 
+            {
+                gameData.levelDataMap[i].starCount = starCount;
+                return true;
+            }
+        }
+
+        //if we reach here, no star data was found
+        GameData.LevelData ld = new GameData.LevelData();
+        ld.levelIndex = levelIndex;
+        ld.starCount = starCount;
+        gameData.levelDataMap.Add(ld);
+        return false;
+    }
+    
+
     [System.Serializable]
     public class GameData
     {
-
-        public Dictionary<int, LevelData> levelDataMap = new Dictionary<int, LevelData>();
+        public List<LevelData> levelDataMap = new List<LevelData>();
         [SerializeField]
         public SettingsData settingsData = new SettingsData();
         [SerializeField]

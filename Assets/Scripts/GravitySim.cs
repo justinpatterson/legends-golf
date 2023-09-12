@@ -17,8 +17,12 @@ public class GravitySim : MonoBehaviour
     //float decayFactor -- meh, don't need it for now
     bool _inMotion = false;
 
+
     public LineRenderer lineRenderer;
     public GameObject hitIndicator;
+    public Collider2D goalCollider = null;
+    bool _goalSuction = false;
+    float _goalSuctionStrength = 0f;
 
     Vector2 _startPos = Vector2.zero;
 
@@ -63,13 +67,35 @@ public class GravitySim : MonoBehaviour
         {
         }
     }
+    public GameObject teePodiumPivotRef;
     private void FixedUpdate()
     {
-        if (!_inMotion) { VisualizeTrajectory(); }
+        if (!_inMotion) 
+        {
+            VisualizeTrajectory();
+            if(teePodiumPivotRef == null)
+                teePodiumPivotRef = GameObject.FindGameObjectWithTag("PodiumBallPivot");
+            else 
+            {
+                rb.MovePosition(teePodiumPivotRef.transform.position);
+            }
+        }
         else
         {
-            currentForce = AddGravityObjectForceInfluences(currentForce, transform.position, 1f);
-            rb.MovePosition(rb.position += currentForce*Time.deltaTime);
+            if (_goalSuction) 
+            {
+                _goalSuctionStrength += Time.deltaTime * 1f;
+                _goalSuctionStrength = Mathf.Clamp(_goalSuctionStrength, 0f, 1f);
+                Vector2 nextPos = Vector2.Lerp(rb.position, goalCollider.transform.position, _goalSuctionStrength);
+                nextPos += ((currentForce*Time.deltaTime) * (1f-_goalSuctionStrength));
+                rb.transform.localScale = Vector3.one * (1f-_goalSuctionStrength);
+                rb.MovePosition(nextPos);
+            }
+            else
+            {
+                currentForce = AddGravityObjectForceInfluences(currentForce, transform.position, 1f);
+                rb.MovePosition(rb.position += currentForce*Time.deltaTime);
+            }
         }
     }
 
@@ -143,7 +169,6 @@ public class GravitySim : MonoBehaviour
         }
         return false;
     }
-    public Collider2D goalCollider = null;
     bool CheckGoalOverlap(Vector2 pos)
     {
         if (goalCollider == null)
@@ -175,9 +200,18 @@ public class GravitySim : MonoBehaviour
     }
     public void ResetObject()
     {
+        Debug.Log("RESET");
+        SetGoalSuction(false);
         _inMotion = false;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0f;
         rb.MovePosition(_startPos);
+        rb.transform.localScale = Vector3.one;
     }
+    public void SetGoalSuction(bool active) 
+    {
+        _goalSuction = active;
+        GetComponent<Collider2D>().enabled = !active; //probably don't want to fire things off when we're sucking somewhere
+    }
+    public bool IsSuctionComplete() { return _goalSuctionStrength>=1f; }
 }

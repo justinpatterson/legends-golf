@@ -23,6 +23,8 @@ public class PlayerObjectMover : MonoBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.GetRayIntersection(ray, 1500f);
+                if (hit.transform != null)
+                    Debug.Log(hit.transform.name + " was clicked on...");
                 if (hit && hit.transform.GetComponent<MoveableObject>())
                 {
                     objectTarget = hit.transform.GetComponent<MoveableObject>();
