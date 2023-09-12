@@ -17,3 +17,9 @@ MonoBehaviour:
   parCount: 4
   defaultDifficulty: 0
   levelPrefab: {fileID: 356507367428106387, guid: 65857d36c6b4196428569a553908d495, type: 3}
+  tutorialElements:
+  - {fileID: 11400000, guid: 957442ac42b8bc14496068978125df26, type: 2}
+  - {fileID: 11400000, guid: d8301b4febdc94049bb67cce0d8bb47e, type: 2}
+  - {fileID: 11400000, guid: 6809783ccd2721c438f39b8c159af556, type: 2}
+  - {fileID: 11400000, guid: 9dbbe1aee66def04da00ccaeb079e5bf, type: 2}
+  - {fileID: 11400000, guid: 06381b411680f2e4da62b47d76e90d4b, type: 2}

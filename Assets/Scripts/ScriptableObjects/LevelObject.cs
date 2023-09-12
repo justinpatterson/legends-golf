@@ -9,4 +9,5 @@ public class LevelObject : ScriptableObject
     public int parCount = 4;
     public int defaultDifficulty = 0; //0 is easy, 3 is hard <-- probably just modifies the length of the trajectory preview
     public GameObject levelPrefab;
+    public TutorialElement[] tutorialElements;
 }
