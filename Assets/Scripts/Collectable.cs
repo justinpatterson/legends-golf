@@ -23,8 +23,26 @@ public class Collectable : MonoBehaviour
             {
                 gp_phase.ReportCollectibleGathered(collectableInfo.id, collectableInfo.amt);
             }
-            gameObject.SetActive(false);
+            StartCoroutine(FadeOutRoutine());
+            GetComponent<Collider2D>().enabled = false;
         }
-        
+    }
+    IEnumerator FadeOutRoutine() 
+    {
+        float time = 0f;
+        float exitTime = 0.333f;
+        float percent = 0f;
+        while (percent <= 1f) 
+        {
+            time+=Time.deltaTime;
+            percent = time / exitTime;
+            percent = Mathf.Clamp(percent,0f, 1f);
+            transform.Rotate(Vector3.up * Time.deltaTime * 360f * (1f/exitTime));
+            transform.localScale = Vector3.one * (1f - percent);
+            transform.position += Vector3.up * Time.deltaTime * 2f * (1f/exitTime);
+            yield return new WaitForEndOfFrame();
+        }
+        gameObject.SetActive(false);
+        yield return null; 
     }
 }
