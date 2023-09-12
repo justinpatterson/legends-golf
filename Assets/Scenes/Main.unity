@@ -413,8 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lastTutorial: {fileID: 0}
-  tutorialSteps:
-  - {fileID: 11400000, guid: 957442ac42b8bc14496068978125df26, type: 2}
+  tutorialSteps: []
   firstTutorialShown: 0
   tutPanel: {fileID: 1841654194782029712}
 --- !u!1 &1081559773
