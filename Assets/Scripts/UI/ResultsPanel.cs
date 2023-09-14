@@ -6,7 +6,7 @@ public class ResultsPanel : UIPanel
 {
     public Button confirmButton;
     public Image[] resultStars;
-    public Sprite star_empty, star_full;
+    public TMPro.TextMeshProUGUI descriptionText;
     public AnimationCurve starFillCurve;
     public override void OpenPanel()
     {
@@ -37,6 +37,9 @@ public class ResultsPanel : UIPanel
                 StartCoroutine(ShowStarRoutine(i, (i < levelData.starCount)));
                 //resultStars[i].sprite = (i < levelData.starCount) ? star_full : star_empty;            
             }
+            descriptionText.text = (levelData.starCount == 3) ? "Hole in One!" :
+                 (levelData.starCount == 2) ? "Eagle!" :
+                 (levelData.starCount == 1) ? "Par" : "ERROR"; //zero stars shouldn't be possible. 
         }
         else { Debug.Log("No level data found for " + GP_Gameplay.levelIndexSelected); }
     }

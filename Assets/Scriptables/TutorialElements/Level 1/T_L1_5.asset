@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: T_L1_5
   m_EditorClassIdentifier: 
   tutImage: {fileID: 21300000, guid: 3afc7979c5eb19b4fa693f9468dcd374, type: 3}
-  tutText: Just like the moon going around the Earth, or an asteroid landing in the
-    ocean, ...
+  tutText: ... that golf ball is either going to be pulled into orbit, or have a
+    crash landing with the other masses.
+  tutHeader: Manny
   autoProgress: 1

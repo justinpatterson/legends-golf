@@ -8,14 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 10200572131404220, guid: a1cd6906af3eaaa4897c3bedbabd999b, type: 3}
+      propertyPath: m_Name
+      value: InfoCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 1916777249821808684, guid: a1cd6906af3eaaa4897c3bedbabd999b, type: 3}
       propertyPath: m_Name
       value: PF_Planet_02
       objectReference: {fileID: 0}
+    - target: {fileID: 2593909855634362482, guid: a1cd6906af3eaaa4897c3bedbabd999b, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3027295770579025229, guid: a1cd6906af3eaaa4897c3bedbabd999b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3411b1b67cfc64a4190be58b02ba1090, type: 3}
+      objectReference: {fileID: -1993471801, guid: 1014b2bd5e5a81a448874f31a86132f0, type: 3}
+    - target: {fileID: 7416611423908541859, guid: a1cd6906af3eaaa4897c3bedbabd999b, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7770422509171632080, guid: a1cd6906af3eaaa4897c3bedbabd999b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

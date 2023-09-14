@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e2c0cce1e1d76c48b8e540e570ef84c, type: 3}
-  m_Name: T_L1_9
+  m_Script: {fileID: 11500000, guid: 382b69c2de664ec4bba72565dddf91b5, type: 3}
+  m_Name: L03
   m_EditorClassIdentifier: 
-  tutImage: {fileID: 21300000, guid: 3afc7979c5eb19b4fa693f9468dcd374, type: 3}
-  tutText: ... that way, we'll get some good tips to use at the gift shop!
-  autoProgress: 1
+  levelName: Hole in Fun
+  levelIndex: 2
+  parCount: 4
+  defaultDifficulty: 1
+  levelPrefab: {fileID: 356507367428106387, guid: d0db2ac71df7fbc4aaa749cd9967398e, type: 3}
+  tutorialElements: []

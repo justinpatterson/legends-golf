@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: T_L1_3
   m_EditorClassIdentifier: 
   tutImage: {fileID: 21300000, guid: 3afc7979c5eb19b4fa693f9468dcd374, type: 3}
-  tutText: Who am I kiddin', you did good, kid.  You've got the <b>call of the caddie</b>.
+  tutText: 'But here comes the next hole.  Everything''s got mass here, so everything''s
+    attracting everything else. '
+  tutHeader: Manny
   autoProgress: 1

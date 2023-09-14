@@ -7,6 +7,7 @@ using TMPro;
 public class PlayPanel : UIPanel
 {
     public Button goButton;
+    public Button InfoButton;
 
     public GameObject EditorPhasePanel;
     public GameObject LaunchPhasePanel;
@@ -29,6 +30,9 @@ public class PlayPanel : UIPanel
         EditorPhasePanel.SetActive(subPhase == GP_Gameplay.GameplayPhases.EditorMode);
         LaunchPhasePanel.SetActive(subPhase == GP_Gameplay.GameplayPhases.Launch);
 
+        if (_currentToggle)
+            InfoButtonClicked(); //if it's true, just set it false between modes for ease
+        
         strokeCount.text = GP_Gameplay.strokeCount.ToString("00");
     }
     private void LateUpdate()
@@ -58,5 +62,15 @@ public class PlayPanel : UIPanel
         GP_Gameplay gp = (GP_Gameplay)GameManager.instance.GetCurrentGamePhase();
         if (gp != null)
             gp.ReportGravityObjectCollision(); //we should probably make a custom restart function, but this does the same thing for now
+    }
+
+    public delegate void InfoButtonClick(bool toggleState);
+    public static InfoButtonClick OnInfoButtonClicked;
+    bool _currentToggle = false;
+    public void InfoButtonClicked() 
+    {
+        _currentToggle = !_currentToggle;
+        Debug.Log("Info clikced! " + _currentToggle);
+        OnInfoButtonClicked(_currentToggle);
     }
 }

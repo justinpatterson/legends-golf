@@ -15,4 +15,5 @@ MonoBehaviour:
   tutImage: {fileID: 21300000, guid: 6777cb42460f8d84d814c6cb3b1a251a, type: 3}
   tutText: Wow, I can't believe it's my first day at the Intergalactic Golf Course.
     I'm gonna make you proud, Mom!
+  tutHeader: KT
   autoProgress: 1

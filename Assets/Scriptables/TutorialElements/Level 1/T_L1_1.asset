@@ -15,4 +15,5 @@ MonoBehaviour:
   tutImage: {fileID: 21300000, guid: 3afc7979c5eb19b4fa693f9468dcd374, type: 3}
   tutText: Don't let your head get too big, you'll start pulling in all the golf
     balls!
+  tutHeader: Manny
   autoProgress: 1

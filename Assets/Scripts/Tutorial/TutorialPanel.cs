@@ -7,6 +7,7 @@ using TMPro;
     public class TutorialPanel : UIPanel
     {
         public TextMeshProUGUI tutorialText;
+        public TextMeshProUGUI tutorialHeader;
         public Image tutorialImage;
         public TextMeshProUGUI tutorialButtonText;
         
@@ -47,9 +48,29 @@ using TMPro;
             tutorialText.text = tutorialText.text.Replace("\\n", "\r\n\n");
             tutorialImage.enabled = currTutElement.tutImage != null;
             tutorialImage.sprite = currTutElement.tutImage;
+            tutorialHeader.text = currTutElement.tutHeader;
             _lastTutDescriptionId = currTutElement.tutText;
             OpenPanel();
+            if (_textRoutine != null) StopCoroutine(_textRoutine);
+            _textRoutine = StartCoroutine(RevealTutorialText(currTutElement.tutText));
         }
+    Coroutine _textRoutine;
+    IEnumerator RevealTutorialText(string text) 
+    {
+        string currStr = "";
+        int currIndex = 0;
+        while (currIndex <= text.Length) 
+        {
+            char c = text[currIndex];
+            currStr = text.Substring(0,currIndex) + "<color=#00000000>" + text.Substring(currIndex) + "</color>";
+                //string.Concat(currStr, c);
+            tutorialText.text = currStr;
+            yield return new WaitForSeconds(c==' ' ? 0.06f : 0.03f);
+            currIndex++;
+        }
+        _textRoutine = null;
+        yield return null;
+    }
 #endregion
 
         public override void OpenPanel()

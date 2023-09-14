@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,12 +14,29 @@ public class MoveableObject : MonoBehaviour
     public GameObject radiusInstance;
     public float radiusLimiter = 10f;
     float _radiusLimiterColliderOffset = 0f;
-
+    public MoveableObjectInfoPanel infoPanel;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<CircleCollider2D>();
         if (col!=null) _radiusLimiterColliderOffset = col.radius;
+        PlayPanel.OnInfoButtonClicked += ReportInfo;
+    }
+
+    private void ReportInfo(bool toggleState)
+    {
+        Debug.Log("Info reported...");
+        if (infoPanel!=null)
+        {
+            if(toggleState)
+                infoPanel.OpenPanel();
+            else 
+                infoPanel.ClosePanel();
+        }
+    }
+    private void OnDestroy()
+    {
+        PlayPanel.OnInfoButtonClicked -= ReportInfo;
     }
 
     private void FixedUpdate()

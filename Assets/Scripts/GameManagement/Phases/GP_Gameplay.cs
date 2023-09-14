@@ -72,7 +72,7 @@ public class GP_Gameplay : GamePhase
                 break;
             case GameplayPhases.EditorMode:
                 {
-                    if (GameManager.instance.GetComponent<TutorialManager>() != null) 
+                    if (strokeCount == 0 && GameManager.instance.GetComponent<TutorialManager>() != null) 
                     {
                         GameManager.instance.GetComponent<TutorialManager>().StartTutorial(levels[levelIndexSelected].tutorialElements);
                     }
