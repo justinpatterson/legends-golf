@@ -8,6 +8,7 @@ public class GP_MainMenu : GamePhase
     public override void StartPhase()
     {
         base.StartPhase();
+        AudioManager.instance.TriggerMusic(AudioManager.AudioKeys.Menu);
     }
 
     public void ReportStartButtonPressed() 

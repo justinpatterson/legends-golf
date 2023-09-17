@@ -7,6 +7,7 @@ public class GP_LevelSelect : GamePhase
     public override void StartPhase()
     {
         base.StartPhase();
+        AudioManager.instance.TriggerMusic(AudioManager.AudioKeys.Menu);
     }
 
     public void TriggerLevelLoad(int levelIndex) 

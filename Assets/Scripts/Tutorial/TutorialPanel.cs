@@ -59,15 +59,16 @@ using TMPro;
     {
         string currStr = "";
         int currIndex = 0;
-        while (currIndex <= text.Length) 
+        while (currIndex < text.Length) 
         {
             char c = text[currIndex];
             currStr = text.Substring(0,currIndex) + "<color=#00000000>" + text.Substring(currIndex) + "</color>";
                 //string.Concat(currStr, c);
             tutorialText.text = currStr;
-            yield return new WaitForSeconds(c==' ' ? 0.06f : 0.03f);
+            yield return new WaitForSeconds(c=='.' ? 0.06f : 0.02f); //eh it feels better to be smoother.
             currIndex++;
         }
+        tutorialText.text = text; //last character
         _textRoutine = null;
         yield return null;
     }

@@ -30,6 +30,7 @@ public class GP_Gameplay : GamePhase
     {
         base.StartPhase();
         _startup = true;//getting around a UI race condition for listening to phase transitions
+        AudioManager.instance.TriggerMusic(AudioManager.AudioKeys.Gameplay);
     }
     public override void UpdatePhase()
     {
@@ -107,6 +108,8 @@ public class GP_Gameplay : GamePhase
                     }
                     else
                         Debug.Log("Can't shoot!");
+
+                    AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Hit);
                 }
                 GoalObject.OnGoalTriggered += ReportGoalTriggered;
                 break;
@@ -188,6 +191,7 @@ public class GP_Gameplay : GamePhase
             _ballReference = collision.gameObject.GetComponent<GravitySim>();
             goalInProgress = true;
             _goalSuctionRoutine = StartCoroutine(SuctionRoutine(goal, _ballReference));
+            AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Suction);
             //SetUpEvaluation(true);
         }
     }
@@ -235,6 +239,7 @@ public class GP_Gameplay : GamePhase
 
     public void ReportCollectibleGathered(string id, int amt) 
     {
+        AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Collect);
         if (_levelCollectables.ContainsKey(id)) 
         {
             int og_amt = _levelCollectables[id];
