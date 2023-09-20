@@ -68,6 +68,8 @@ public class GP_Gameplay : GamePhase
                 _spawnedLevelInstance.SetActive(true);
 
                 _levelCollectables.Clear();
+                
+                Camera.main.orthographicSize = levels[levelIndexSelected].cameraSize;
 
                 SubPhaseTransition(GameplayPhases.EditorMode);
                 break;

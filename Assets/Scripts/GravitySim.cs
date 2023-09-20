@@ -28,6 +28,29 @@ public class GravitySim : MonoBehaviour
 
     private void Awake()
     {
+        bool success = false;
+        GameDataManager.GameData.LevelData ld = GameDataManager.instance.GetLevelData(GP_Gameplay.levelIndexSelected, out success);
+        if (success) 
+        {
+            switch (ld.levelIndex) 
+            {
+                case 0:
+                    visualizeDistance = 100;
+                    break;
+                case 1:
+                    visualizeDistance = 80;
+                    break;
+                case 2:
+                    visualizeDistance = 50;
+                    break;
+                case 3:
+                    visualizeDistance = 40;
+                    break;
+                default:
+                    visualizeDistance = 20;
+                    break;
+            }
+        }
         rb = GetComponent<Rigidbody2D>();
 
         _startPos = transform.position;
@@ -68,11 +91,14 @@ public class GravitySim : MonoBehaviour
         }
     }
     public GameObject teePodiumPivotRef;
+    [Range(1, 100)]
+    public int visualizeDistance = 100;
+
     private void FixedUpdate()
     {
         if (!_inMotion) 
         {
-            VisualizeTrajectory();
+            VisualizeTrajectory(visualizeDistance);
             if(teePodiumPivotRef == null)
                 teePodiumPivotRef = GameObject.FindGameObjectWithTag("PodiumBallPivot");
             else 
@@ -122,7 +148,7 @@ public class GravitySim : MonoBehaviour
         if(!lineRenderer.enabled) lineRenderer.enabled = true;
         
         lineRenderer.SetPosition(0, pos);
-        if(lineRenderer.positionCount < maxIterations) { lineRenderer.positionCount = maxIterations; }
+        if(lineRenderer.positionCount != maxIterations) { lineRenderer.positionCount = maxIterations; }
         bool obstacleOverlap = false;
         bool goalOverlap = false;
         for (int i = 1; i < maxIterations; i++) 
