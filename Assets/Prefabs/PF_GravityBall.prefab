@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8165057710477302918}
   - component: {fileID: 4285923917716390683}
   - component: {fileID: 1770608819749485743}
+  - component: {fileID: 4649052923693359167}
   m_Layer: 0
   m_Name: PF_GravityBall
   m_TagString: Untagged
@@ -294,6 +295,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4649052923693359167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181530057460930542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5570ba9a237a4e438527c5d19b2a480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSpriteRenderer: {fileID: 1432942712744903931}
 --- !u!1 &5155252630336581573
 GameObject:
   m_ObjectHideFlags: 0

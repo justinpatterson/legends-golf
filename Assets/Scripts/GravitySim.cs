@@ -200,7 +200,6 @@ public class GravitySim : MonoBehaviour
     }
     public void ResetObject()
     {
-        Debug.Log("RESET");
         SetGoalSuction(false);
         _inMotion = false;
         rb.velocity = Vector3.zero;

@@ -8,7 +8,16 @@ public class GameDataManager : MonoBehaviour
     [SerializeField]
     public GameData gameData = new GameData();
 
-
+    public InventoryObject[] masterInventoryList;
+    private void Update()
+    {
+        //just testing that we can equip an item
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            InventoryObject io = masterInventoryList[0];
+            gameData.playerData.EquipItem(io);
+        }
+    }
     public GameData.LevelData GetLevelData(int levelIndex, out bool success)
     {
         for (int i = 0; i < gameData.levelDataMap.Count; i++)
@@ -28,11 +37,11 @@ public class GameDataManager : MonoBehaviour
 
         return ld;
     }
-    public bool UpdateStarData(int levelIndex, int starCount) 
+    public bool UpdateStarData(int levelIndex, int starCount)
     {
-        for(int i = 0; i < gameData.levelDataMap.Count; i++) 
+        for (int i = 0; i < gameData.levelDataMap.Count; i++)
         {
-            if (gameData.levelDataMap[i].levelIndex == levelIndex) 
+            if (gameData.levelDataMap[i].levelIndex == levelIndex)
             {
                 gameData.levelDataMap[i].starCount = starCount;
                 return true;
@@ -46,7 +55,21 @@ public class GameDataManager : MonoBehaviour
         gameData.levelDataMap.Add(ld);
         return false;
     }
-    
+
+    public bool AttemptPurchase(int itemIndex) 
+    {   
+        if( masterInventoryList.Length > itemIndex) 
+        {
+            int cost = masterInventoryList[itemIndex].itemCost;
+            if( gameData.playerData.currencyAmt >= cost) 
+            {
+                gameData.playerData.currencyAmt -= cost;
+                gameData.purchaseData.SetPurchasedItem(itemIndex, true);
+                return true;
+            }
+        }
+        return false;
+    }
 
     [System.Serializable]
     public class GameData
@@ -78,6 +101,31 @@ public class GameDataManager : MonoBehaviour
         {
             public Dictionary<int, bool> purchaseMap = new Dictionary<int, bool>();
 
+            public bool HasPurchasedItem(int index)
+            {
+                bool hasKey = GameDataManager.instance.gameData.purchaseData.purchaseMap.ContainsKey(index);
+                if (hasKey) 
+                {
+                    return GameDataManager.instance.gameData.purchaseData.purchaseMap[index];
+                }
+                else 
+                {
+                    GameDataManager.instance.gameData.purchaseData.purchaseMap.Add(index, false);
+                    return false;
+                }
+            }
+            public void SetPurchasedItem(int index, bool purchased) 
+            {
+                bool hasKey = GameDataManager.instance.gameData.purchaseData.purchaseMap.ContainsKey(index);
+                if (hasKey)
+                {
+                    GameDataManager.instance.gameData.purchaseData.purchaseMap[index] = purchased;
+                }
+                else
+                {
+                    GameDataManager.instance.gameData.purchaseData.purchaseMap.Add(index, purchased);
+                }
+            }
         }
 
         [System.Serializable]
@@ -85,6 +133,16 @@ public class GameDataManager : MonoBehaviour
         {
             //maybe current equipment indexes for golf club, etc.
             public int currencyAmt = 0;
+            public InventoryObject customBallEquipped = null;
+
+
+            public void EquipItem(InventoryObject io) 
+            {
+                if (io.itemType == InventoryObject.ItemTypes.BallColor) 
+                {
+                    customBallEquipped = io;
+                }
+            }
         }
     }
 

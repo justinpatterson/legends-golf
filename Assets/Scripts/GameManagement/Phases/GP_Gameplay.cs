@@ -120,9 +120,11 @@ public class GP_Gameplay : GamePhase
                 else if (strokeCount < levels[levelIndexSelected].parCount) { starScore = 2; }
                 else starScore = 1;
                 GameDataManager.instance.UpdateStarData(levelIndexSelected, starScore);
+                GameDataManager.instance.gameData.playerData.currencyAmt += ((starScore)*2);
 
                 //ResolveCollectedItems() is run in SetUpEvaluation(TRUE)
                 _levelCollectables.Clear();
+
                 GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Results);
                 break;
         }

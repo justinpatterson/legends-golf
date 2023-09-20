@@ -79,6 +79,7 @@ public class AudioManager : MonoBehaviour
         //if this is a memory issue, we can make a pooling system.
         AudioSource src = gameObject.AddComponent<AudioSource>();
         src.clip = ac;
+        src.outputAudioMixerGroup = sfxMixerGroup;
         src.Play();
         Destroy(src, ac.length);
         

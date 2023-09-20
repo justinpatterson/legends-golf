@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
         Gameplay,
         Shop,
         Results,
-        LevelSelect
+        LevelSelect,
+        Inventory
     }
 
     [System.Serializable]

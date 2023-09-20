@@ -51,6 +51,16 @@ public class LevelSelectPanel : UIPanel
             gpCast.TriggerBackButton();
         }
     }
+
+    public void ReportEquipButtonPressed()
+    {
+        GamePhase gamePhase = GameManager.instance.GetCurrentGamePhase();
+        GP_LevelSelect gpCast = (GP_LevelSelect)gamePhase;
+        if (gpCast!= null)
+        {
+            gpCast.TriggerEquipButton();
+        }
+    }
     public void ReportShopButtonPressed()
     {
         GamePhase gamePhase = GameManager.instance.GetCurrentGamePhase();

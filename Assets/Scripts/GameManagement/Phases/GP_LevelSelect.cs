@@ -23,4 +23,8 @@ public class GP_LevelSelect : GamePhase
     {
         GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Shop);
     }
+    public void TriggerEquipButton()
+    {
+        GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Inventory);
+    }
 }

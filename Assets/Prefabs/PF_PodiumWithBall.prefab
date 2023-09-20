@@ -433,6 +433,9 @@ MonoBehaviour:
   radiusInstance: {fileID: 690239316015006628}
   radiusLimiter: 4
   infoPanel: {fileID: 0}
+  characterSprite: {fileID: 4213219659430913958}
+  characterIdle: {fileID: 21300000, guid: 163bfbe13e8248446ac12340fd6c7ac7, type: 3}
+  characterSwing: {fileID: 21300000, guid: f2859568abcc8fa42b8b4b0f4dd85ba9, type: 3}
 --- !u!1 &7326672157123517897
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +447,7 @@ GameObject:
   - component: {fileID: 1037643859541158556}
   - component: {fileID: 4213219659430913958}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

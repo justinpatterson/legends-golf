@@ -8,6 +8,7 @@ public class ResultsPanel : UIPanel
     public Image[] resultStars;
     public TMPro.TextMeshProUGUI descriptionText;
     public AnimationCurve starFillCurve;
+    public TMPro.TextMeshProUGUI bonusCurrencyText;
     public override void OpenPanel()
     {
         ResetStars();
@@ -40,6 +41,7 @@ public class ResultsPanel : UIPanel
             descriptionText.text = (levelData.starCount == 3) ? "Hole in One!" :
                  (levelData.starCount == 2) ? "Eagle!" :
                  (levelData.starCount == 1) ? "Par" : "ERROR"; //zero stars shouldn't be possible. 
+            bonusCurrencyText.text = ((levelData.starCount)*2).ToString();
         }
         else { Debug.Log("No level data found for " + GP_Gameplay.levelIndexSelected); }
     }
