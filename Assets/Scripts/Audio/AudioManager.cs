@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public enum AudioKeys 
     {
-        Menu, Gameplay, Results, Click, Hit, Collect, Suction, Back, Redo
+        Menu, Gameplay, Results, Click, Hit, Collect, Suction, Back, Redo, Purchase
     }
 
     [System.Serializable]

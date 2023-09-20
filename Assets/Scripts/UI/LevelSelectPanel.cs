@@ -26,8 +26,10 @@ public class LevelSelectPanel : UIPanel
         return 0; 
     }
 
-    public void ReportLevelLaunchPressed(int levelIndex) 
+    public void ReportLevelLaunchPressed(int levelIndex)
     {
+        AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Click);
+
         _selectedLevel = levelIndex;
         if (GameManager.instance)
         {
@@ -42,8 +44,10 @@ public class LevelSelectPanel : UIPanel
 
     }
 
-    public void ReportBackButtonPressed() 
+    public void ReportBackButtonPressed()
     {
+        AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Back);
+
         GamePhase gamePhase = GameManager.instance.GetCurrentGamePhase();
         GP_LevelSelect gpCast = (GP_LevelSelect)gamePhase;
         if (gpCast!= null)
@@ -54,6 +58,7 @@ public class LevelSelectPanel : UIPanel
 
     public void ReportEquipButtonPressed()
     {
+        AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Click);
         GamePhase gamePhase = GameManager.instance.GetCurrentGamePhase();
         GP_LevelSelect gpCast = (GP_LevelSelect)gamePhase;
         if (gpCast!= null)
@@ -63,6 +68,7 @@ public class LevelSelectPanel : UIPanel
     }
     public void ReportShopButtonPressed()
     {
+        AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Click);
         GamePhase gamePhase = GameManager.instance.GetCurrentGamePhase();
         GP_LevelSelect gpCast = (GP_LevelSelect)gamePhase;
         if (gpCast!= null)

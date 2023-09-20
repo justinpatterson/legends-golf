@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class TeePodium : MoveableObject
 {
-    public SpriteRenderer characterSprite;
-    public Sprite characterIdle, characterSwing;
+    //public SpriteRenderer characterSprite;
+    //public Sprite characterIdle, characterSwing;
+    public CharacterViewController characterViewCtr;
     private void Start()
     {
         GP_Gameplay.OnGameplaySubPhaseStarted += GameplaySubphaseStarted;
@@ -14,7 +15,12 @@ public class TeePodium : MoveableObject
 
     private void GameplaySubphaseStarted(GP_Gameplay.GameplayPhases subPhase)
     {
-        characterSprite.sprite = (subPhase == GP_Gameplay.GameplayPhases.EditorMode || subPhase == GP_Gameplay.GameplayPhases.Load) ? characterIdle : characterSwing;
+        characterViewCtr.SetCharacterState(
+            (subPhase == GP_Gameplay.GameplayPhases.EditorMode || subPhase == GP_Gameplay.GameplayPhases.Load) ? 
+            CharacterViewController.CharacterStates.Idle 
+            : CharacterViewController.CharacterStates.Swing 
+        );
+        //characterSprite.sprite = (subPhase == GP_Gameplay.GameplayPhases.EditorMode || subPhase == GP_Gameplay.GameplayPhases.Load) ? characterIdle : characterSwing;
     }
     private void OnDestroy()
     {

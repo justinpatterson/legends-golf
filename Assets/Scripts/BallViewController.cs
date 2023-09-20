@@ -7,9 +7,11 @@ public class BallViewController : MonoBehaviour
     public SpriteRenderer ballSpriteRenderer;
     private void Awake()
     {
-        if (GameDataManager.instance.gameData.playerData.customBallEquipped != null) 
+        if (GameDataManager.instance.gameData.playerData.customBallId != -1) 
         {
-            ballSpriteRenderer.sprite = GameDataManager.instance.gameData.playerData.customBallEquipped.sprites[0];
+            int itemId = GameDataManager.instance.gameData.playerData.customBallId;
+            InventoryObject io = GameDataManager.instance.GetInventoryItem(itemId);
+            ballSpriteRenderer.sprite = io.sprites[0];
         }
     }
 }

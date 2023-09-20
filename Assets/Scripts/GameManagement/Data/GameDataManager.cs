@@ -71,6 +71,17 @@ public class GameDataManager : MonoBehaviour
         return false;
     }
 
+    public InventoryObject GetInventoryItem(int id) 
+    {
+        //for now, index and array location should match. But let's assume that's not always the case.
+            //if size exceeds 20, let's shift this to a dictionary.
+        for(int i = 0; i < masterInventoryList.Length; i++) 
+        {
+            if(masterInventoryList[i].itemIndex == id) { return masterInventoryList[i]; }
+        }
+        return null;
+    }
+
     [System.Serializable]
     public class GameData
     {
@@ -133,14 +144,19 @@ public class GameDataManager : MonoBehaviour
         {
             //maybe current equipment indexes for golf club, etc.
             public int currencyAmt = 0;
-            public InventoryObject customBallEquipped = null;
+            public int customBallId = -1;
+            public int customCharId = -1;
 
 
             public void EquipItem(InventoryObject io) 
             {
                 if (io.itemType == InventoryObject.ItemTypes.BallColor) 
                 {
-                    customBallEquipped = io;
+                    customBallId = io.itemIndex;
+                }
+                else if (io.itemType == InventoryObject.ItemTypes.Character)
+                {
+                    customCharId = io.itemIndex;
                 }
             }
         }

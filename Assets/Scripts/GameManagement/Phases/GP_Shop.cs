@@ -5,7 +5,7 @@ using UnityEngine;
 public class GP_Shop : GamePhase
 {
 
-    public void TriggerBackButton() 
+    public void TriggerBackButton()
     {
         GameManager.instance.DoPhaseTransition(GameManager.GamePhases.LevelSelect);
     }
@@ -18,6 +18,8 @@ public class GP_Shop : GamePhase
         {
             Debug.Log("Can Afford... completing purchase...");
             bool success = GameDataManager.instance.AttemptPurchase(index);
+            if (success)
+                AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Purchase);
             //at this point, I don't do anything if failed
         }
     }

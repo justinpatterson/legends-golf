@@ -30,18 +30,11 @@ public class ShopUIElement : MonoBehaviour
             purchaseButton.SetActive(!hasPurchased);
             purchasedContainer.SetActive(hasPurchased);
         }
-
-
     }
 
     public void OnPurchaseClicked() 
     {
-        GP_Shop gp = GameManager.instance.GetCurrentGamePhase() as GP_Shop;
-        if(gp != null) 
-        {
-            Debug.Log("PURCHASING ITEM: " + masterInventoryIndex);
-            gp.PurchaseItem(masterInventoryIndex);
-            RefreshView();
-        }
+        _shopPanelRef.ReportPurchaseClicked(masterInventoryIndex);
+        RefreshView();
     }
 }

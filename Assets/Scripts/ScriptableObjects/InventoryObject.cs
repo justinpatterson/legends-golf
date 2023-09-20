@@ -12,6 +12,5 @@ public class InventoryObject : ScriptableObject
     public Color colorData = Color.white;
     public GameObject fxPrefab;
     public Sprite[] sprites;
-
-
+    public Sprite iconSprite;
 }

@@ -15,6 +15,7 @@ public class MainMenuPanel : UIPanel
 
     private void OnStartButtonPressed()
     {
+        AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Click);
         GP_MainMenu mainMenuPhase = (GP_MainMenu)GameManager.instance.GetCurrentGamePhase();
         if (mainMenuPhase != null)
             mainMenuPhase.ReportStartButtonPressed();

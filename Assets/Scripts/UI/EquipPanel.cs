@@ -54,9 +54,10 @@ public class EquipPanel : UIPanel
     }
     void InitializeEquipment()
     {
-        if (GameDataManager.instance.gameData.playerData.customBallEquipped!=null)
+        if (GameDataManager.instance.gameData.playerData.customBallId!=-1)
         {
-            InventoryObject io = GameDataManager.instance.gameData.playerData.customBallEquipped;
+            int ballIndex = GameDataManager.instance.gameData.playerData.customBallId;
+            InventoryObject io = GameDataManager.instance.GetInventoryItem(ballIndex);
             foreach (ES_ToEquip slot in equipmentSlots)
             {
                 if (slot.targetType == InventoryObject.ItemTypes.BallColor)
@@ -78,7 +79,7 @@ public class EquipPanel : UIPanel
         int inventoryIndex = 0;
         foreach(int key in GameDataManager.instance.gameData.purchaseData.purchaseMap.Keys)
         {
-            if (GameDataManager.instance.gameData.playerData.customBallEquipped != null && key == GameDataManager.instance.gameData.playerData.customBallEquipped.itemIndex) { } //these will go in equip section, not grid
+            if (key == GameDataManager.instance.gameData.playerData.customBallId) { } //these will go in equip section, not grid
             else 
             {
                 if(GameDataManager.instance.gameData.purchaseData.HasPurchasedItem(key))
