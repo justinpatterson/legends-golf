@@ -20,46 +20,35 @@ using System;
         }
         public TutorialPanel tutPanel;
 
-        public void StartTutorial()
-        {            
-            DoIntroTutorial();
-        }
         public void StartTutorial(TutorialElement[] tutorial) 
         {
             currentTutIndex = 0;
             tutorialSteps = tutorial;
             IterateOrEndTutorial();
         }
-        public void SkipIntroTutorial()
+        public bool TutorialInProgress() 
         {
-            firstTutorialShown = true;
-            currentTutIndex = tutorialSteps.Length;
+            return currentTutIndex >= tutorialSteps.Length;
         }
-        public int GetCurrentTutorialStep()
+        int GetCurrentTutorialStep()
         {
             return currentTutIndex;
         }
         
-        public void DoIntroTutorial()
-        {
-            Debug.Log("FIRST TUTORIAL STEP...");
-            if (firstTutorialShown)
-                return;
-            firstTutorialShown = true;
-            currentTutIndex = 0;
-            IterateOrEndTutorial();
-        }
-
-        public void CheckAutoProgress() 
+        public void TriggerTutorialIteration() 
         {
             if (_lastTutorial.autoProgress)
             {
                 ++currentTutIndex;
                 IterateOrEndTutorial();
             }
+            else 
+            {
+                //in other games, we'd wait to progress until certain actions were performed.
+            }
         }
 
-        public void IterateOrEndTutorial()
+        void IterateOrEndTutorial()
         {
             if (currentTutIndex == tutorialSteps.Length)
             {

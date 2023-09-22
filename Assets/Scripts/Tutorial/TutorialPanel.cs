@@ -19,10 +19,6 @@ using TMPro;
         {           
             OpenPanel();
         }
-        void Start()
-        {
-
-        }
 
         public void ClickVoiceButton()
         {
@@ -87,7 +83,7 @@ using TMPro;
 
             if (tutMan != null) 
             {
-                tutMan.CheckAutoProgress();
+                tutMan.TriggerTutorialIteration();
             }
         }
 

@@ -26,6 +26,7 @@ public class GP_Results : GamePhase
         foreach (Vector3 screenPos in screenPositions)
         {
             Vector3 worldPos = fxCamera.ScreenToWorldPoint(screenPos);
+            worldPos.z = 0;
             GameObject obj = Instantiate(fanfareFxPrefabs, worldPos, Quaternion.identity);
             Destroy(obj, 10f);
         }

@@ -11,9 +11,9 @@ public class PlayPanel : UIPanel
 
     public GameObject EditorPhasePanel;
     public GameObject LaunchPhasePanel;
-    public TextMeshProUGUI launchPhaseCountdown;
+    //public TextMeshProUGUI launchPhaseCountdown;
     public TextMeshProUGUI strokeCount, parCount;
-
+    public TimerUI timerUI;
     public override void OpenPanel()
     {
         base.OpenPanel();
@@ -41,7 +41,8 @@ public class PlayPanel : UIPanel
     }
     void RefreshLaunchCounter(float time)
     {
-        launchPhaseCountdown.text = Mathf.Ceil(time).ToString("00");
+        //launchPhaseCountdown.text = Mathf.Ceil(time).ToString("00");
+        timerUI.SetTimerValue(time);
     }
     public override void ClosePanel()
     {

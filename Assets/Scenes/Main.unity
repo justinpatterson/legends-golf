@@ -310,7 +310,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 53
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6086,6 +6086,10 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 889331645896399157, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 917194373537638789, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6388,6 +6392,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742025682999348916, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831605102081352798, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1933189794039105337, guid: ea938ebc413186a4d88731c39c382535, type: 3}
@@ -6784,6 +6792,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708605341476825089, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815484358773302491, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3976582394046874544, guid: ea938ebc413186a4d88731c39c382535, type: 3}
@@ -7405,6 +7417,10 @@ PrefabInstance:
     - target: {fileID: 6461885956288245716, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591284048984052671, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_TagString
+      value: MainCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6711406230288490527, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchoredPosition.y

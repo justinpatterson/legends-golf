@@ -16,7 +16,7 @@ public class EquipElement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [SerializeField] private GraphicRaycaster graphicRaycaster;
 
     public Image iconImg;
-
+    Canvas mainCanvas;
     /// <summary>
     /// IBeginDragHandler
     /// Method called on drag begin.
@@ -24,17 +24,24 @@ public class EquipElement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     /// <param name="eventData">Event data.</param>
     private void Awake()
     {
+        mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>();
     }
+
     public void InitializeElement(InventoryObject item) 
     {
         inventoryReference = item;
         if (iconImg != null)
             iconImg.sprite = inventoryReference.sprites[0];
     }
+
+    Vector3 CalculateOffsetFromPointerDelta(Vector2 delta) 
+    {
+        return new Vector3(delta.x, delta.y, 0) / mainCanvas.scaleFactor;
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         // Start moving object from the beginning!
-        transform.localPosition += new Vector3(eventData.delta.x, eventData.delta.y, 0) / transform.lossyScale.x; // Thanks to the canvas scaler we need to devide pointer delta by canvas scale to match pointer movement.
+        transform.localPosition += CalculateOffsetFromPointerDelta(eventData.delta);// (transform.lossyScale.x); // Thanks to the canvas scaler we need to devide pointer delta by canvas scale to match pointer movement.
         // We need a few references from UI.
         if (!canvas)
         {
@@ -49,7 +56,10 @@ public class EquipElement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void OnDrag(PointerEventData eventData)
     {
         // Continue moving object around screen.
-        transform.localPosition += new Vector3(eventData.delta.x, eventData.delta.y, 0) / transform.lossyScale.x; // Thanks to the canvas scaler we need to devide pointer delta by canvas scale to match pointer movement.
+        transform.localPosition += CalculateOffsetFromPointerDelta(eventData.delta);// (transform.lossyScale.x); // Thanks to the canvas scaler we need to devide pointer delta by canvas scale to match pointer movement.
+        //transform.position = eventData.position;
+
+        //transform.position = Input.mousePosition;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
