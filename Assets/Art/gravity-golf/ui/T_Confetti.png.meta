@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 88af117edb9414640b620c567c01a27e
+guid: 1f84ef76ba67d37409b2a69499a6a24e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,22 +136,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stars-5532605_1280_0
+      name: T_Confetti_0
       rect:
         serializedVersion: 2
-        x: 701
-        y: 683
-        width: 64
-        height: 64
+        x: 54
+        y: 812
+        width: 151
+        height: 137
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79276032c08633a41a6e9b2924d9fa51
-      internalID: 334107984
+      spriteID: b7d720937b7937e4b83ebc6fd4e82eb8
+      internalID: -1625387702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Confetti_1
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 802
+        width: 154
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5129bd5da501e7d4f89877e7c8a009f9
+      internalID: -566055220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Confetti_2
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 826
+        width: 108
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24115bb6e5fdd55438de44ad2838673f
+      internalID: 1624649033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Confetti_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 552
+        width: 172
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b94e6b0e40cd854ebc19674b34a7eb1
+      internalID: 726335816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Confetti_4
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 560
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdea253922c6444a8f1aa187009177a
+      internalID: -930670460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Confetti_5
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 548
+        width: 181
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac2c10a3e05af44ba1b1b0b934103b6
+      internalID: 1500386327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Confetti_6
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 307
+        width: 168
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1f1b60f1d09f0449bada46fc396fa2
+      internalID: 1652139829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Confetti_7
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 305
+        width: 175
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c242469a5d5abd4c9a90fa1b1f56b6d
+      internalID: -180714746
       vertices: []
       indices: 
       edges: []
@@ -167,7 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stars-5532605_1280_0: 334107984
+      T_Confetti_0: -1625387702
+      T_Confetti_1: -566055220
+      T_Confetti_2: 1624649033
+      T_Confetti_3: 726335816
+      T_Confetti_4: -930670460
+      T_Confetti_5: 1500386327
+      T_Confetti_6: 1652139829
+      T_Confetti_7: -180714746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382b69c2de664ec4bba72565dddf91b5, type: 3}
+  m_Name: L06
+  m_EditorClassIdentifier: 
+  levelName: Hole in Fun
+  levelIndex: 4
+  parCount: 4
+  defaultDifficulty: 1
+  levelPrefab: {fileID: 356507367428106387, guid: 78d1da8d7db14634ca9ed2526831bc41, type: 3}
+  tutorialElements: []
+  cameraSize: 25

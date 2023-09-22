@@ -15,8 +15,13 @@ public class MoveableObject : MonoBehaviour
     public float radiusLimiter = 10f;
     float _radiusLimiterColliderOffset = 0f;
     public MoveableObjectInfoPanel infoPanel;
+
+    public SpriteRenderer interactionCueSprite;
+    public Gradient interactionCurveVales; //x is scale, y is local-y, z is rotation
+    public float interactionCueOffset = 0f;
     private void Awake()
     {
+        interactionCueOffset = UnityEngine.Random.Range(0f, Mathf.PI);
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<CircleCollider2D>();
         if (col!=null) _radiusLimiterColliderOffset = col.radius;
@@ -44,6 +49,15 @@ public class MoveableObject : MonoBehaviour
         if(rb != null && _moveInProgress) 
         {
             rb.MovePosition(rb.position + (targetPos - rb.position)*Time.deltaTime*movementSpeed);
+        }
+        if (interactionCueSprite != null) 
+        {
+            float currVal = ((1f + Mathf.Sin(Time.time + interactionCueOffset))/2f);
+            Color gradEval = interactionCurveVales.Evaluate(currVal);
+            interactionCueSprite.transform.localScale = Vector3.one * gradEval.r;
+            interactionCueSprite.color = new Color(1f,1f,1f, gradEval.g);
+            //interactionCueSprite.transform.localPosition  = Vector3.up * gradEval.g;  
+            interactionCueSprite.transform.Rotate(Vector3.forward * gradEval.b * 360f * Time.deltaTime);
         }
     }
     public void SetMoveState(bool isMoving) 

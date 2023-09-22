@@ -10,7 +10,7 @@ public class GravitySim : MonoBehaviour
     float attackStrength = 1f;
     [SerializeField]
     float maxAttackStrength = 100f;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     public Vector2 currentForce = Vector2.zero;
     public Rigidbody2D[] gravityObjs; //lets just say the scale of the planet indicates its mass for now
@@ -156,7 +156,12 @@ public class GravitySim : MonoBehaviour
             if (!obstacleOverlap && !goalOverlap)
             {
                 force = AddGravityObjectForceInfluences(force, pos, 1f);
-                pos += force*Time.deltaTime;
+                pos += force *
+#if UNITY_EDITOR
+                    (_editorDraw ? (1f/60f) : Time.deltaTime);
+#else
+                    Time.deltaTime;
+#endif
                 obstacleOverlap |= CheckGravObjOverlap(pos);
                 goalOverlap |= CheckGoalOverlap(pos);
                 //if (i%resolutionMod == 0 || overlap) //I thought I could make it do every other position, but not initially working. Will review later.
@@ -239,4 +244,17 @@ public class GravitySim : MonoBehaviour
         GetComponent<Collider2D>().enabled = !active; //probably don't want to fire things off when we're sucking somewhere
     }
     public bool IsSuctionComplete() { return _goalSuctionStrength>=1f; }
+
+#if UNITY_EDITOR
+    [SerializeField]
+    bool _editorDraw;
+    private void OnDrawGizmosSelected()
+    {
+        if (_editorDraw) 
+        {
+            VisualizeTrajectory(100);
+            _editorDraw = false;
+        }  
+    }
+#endif
 }
