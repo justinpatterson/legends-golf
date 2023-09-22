@@ -5,7 +5,7 @@ using UnityEngine;
 public class GP_Results : GamePhase
 {
     public GameObject fanfareFxPrefabs;
-
+    public Camera fxCamera;
     public override void StartPhase()
     {
         base.StartPhase();
@@ -16,15 +16,20 @@ public class GP_Results : GamePhase
     IEnumerator FanfareRoutine() 
     {
         yield return new WaitForSeconds(0.1f);
-        //Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2, Screen.height/2));
-        //GameObject fanfareInst = Instantiate(fanfareFxPrefabs, pos, Quaternion.identity);
-        Vector3 pos2 = Camera.main.ScreenToWorldPoint(new Vector3(0,0));
-        GameObject fanfareInst2 = Instantiate(fanfareFxPrefabs, pos2, Quaternion.identity);
-        Vector3 pos3 = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0));
-        GameObject fanfareInst3 = Instantiate(fanfareFxPrefabs, pos3, Quaternion.identity);
-        //Destroy(fanfareInst, 10f);
-        Destroy(fanfareInst2, 10f);
-        Destroy(fanfareInst3, 10f);
+        Vector3[] screenPositions = new Vector3[]
+        {
+            //new Vector3(Screen.width/2, Screen.height/2), //center
+            //new Vector3(0,0), //bottom left
+            //new Vector3(Screen.width, 0), //bottom right
+            new Vector3(Screen.width/2, Screen.height) //top center
+        };
+        foreach (Vector3 screenPos in screenPositions)
+        {
+            Vector3 worldPos = fxCamera.ScreenToWorldPoint(screenPos);
+            GameObject obj = Instantiate(fanfareFxPrefabs, worldPos, Quaternion.identity);
+            Destroy(obj, 10f);
+        }
+        
         yield return null;
     }
 }

@@ -30,7 +30,7 @@ public class GravitySim : MonoBehaviour
     {
         bool success = false;
         GameDataManager.GameData.LevelData ld = GameDataManager.instance.GetLevelData(GP_Gameplay.levelIndexSelected, out success);
-        if (success) 
+        if (success && false) //don't want to modify length for now 
         {
             switch (ld.levelIndex) 
             {
