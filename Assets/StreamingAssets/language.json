@@ -1,0 +1,19 @@
+{
+  "_meta": 
+  {
+    "maxChars": 
+    {
+      "wood_description": 50
+    }
+  },
+   "en":
+   {
+    "tut_00_00":"",
+    "start_button":"Start Game",
+    "title":"Gravity Golf",
+    "settings_button":"Settings",
+    "load_button":"Load Game",
+    "quit_button":"Quit",
+    
+   }
+}

@@ -156,9 +156,9 @@ public class GravitySim : MonoBehaviour
             if (!obstacleOverlap && !goalOverlap)
             {
                 force = AddGravityObjectForceInfluences(force, pos, 1f);
-                pos += force *
+                pos += force *Time.deltaTime;
 #if UNITY_EDITOR
-                    (_editorDraw ? (1f/60f) : Time.deltaTime);
+                    //(_editorDraw ? (1f/60f) : Time.deltaTime);
 #else
                     Time.deltaTime;
 #endif

@@ -18,4 +18,4 @@ MonoBehaviour:
   defaultDifficulty: 1
   levelPrefab: {fileID: 356507367428106387, guid: 153af3c09e675ee46b8ac345dc941c19, type: 3}
   tutorialElements: []
-  cameraSize: 30
+  cameraSize: 20

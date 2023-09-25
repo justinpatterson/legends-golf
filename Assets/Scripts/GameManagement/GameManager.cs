@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public PhaseInfo[] phaseLogics;
     public GamePhases currentPhase = GamePhases.Init;
     GamePhase _currentPhaseLogic;
+    public Localization.LocalizationManager localizationManager;
 
     public static GameManager instance;
     private void Awake()
