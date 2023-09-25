@@ -272,4 +272,9 @@ public class GP_Gameplay : GamePhase
         base.EndPhase();
         Destroy(_spawnedLevelInstance);
     }
+
+    public int GetLevelArcLength()  //this really should be somewhere else
+    {
+        return levels[levelIndexSelected].arcLength;
+    }
 }

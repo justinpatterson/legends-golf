@@ -30,6 +30,11 @@ public class CalendarDateObject : MonoBehaviour
     {
         RefreshStars();
         RefreshPlayButtonVisibility(); //probably not great, as we can't guarantee the order these happen ON START. 
+
+#if UNITY_EDITOR
+        goButton.interactable = true;
+        Debug.Log("Should enable...");
+#endif
     }
 
     void RefreshStars() 

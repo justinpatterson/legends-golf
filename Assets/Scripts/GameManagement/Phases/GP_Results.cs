@@ -6,12 +6,30 @@ public class GP_Results : GamePhase
 {
     public GameObject fanfareFxPrefabs;
     public Camera fxCamera;
+    List<GameObject> _fxInstances = new();
+    Coroutine _fxInstancesCoroutine = null;
     public override void StartPhase()
     {
         base.StartPhase();
 
         AudioManager.instance.TriggerMusic(AudioManager.AudioKeys.Results);
-        StartCoroutine(FanfareRoutine());
+
+        if(_fxInstancesCoroutine != null) { 
+            StopCoroutine(_fxInstancesCoroutine);
+            ClearFxInstances();
+            _fxInstancesCoroutine = null;
+        }
+        _fxInstancesCoroutine = StartCoroutine(FanfareRoutine());
+    }
+    public override void EndPhase()
+    {
+        base.EndPhase();
+        if (_fxInstancesCoroutine != null)
+        {
+            StopCoroutine(_fxInstancesCoroutine);
+            ClearFxInstances();
+            _fxInstancesCoroutine = null;
+        }
     }
     IEnumerator FanfareRoutine() 
     {
@@ -28,9 +46,20 @@ public class GP_Results : GamePhase
             Vector3 worldPos = fxCamera.ScreenToWorldPoint(screenPos);
             worldPos.z = 0;
             GameObject obj = Instantiate(fanfareFxPrefabs, worldPos, Quaternion.identity);
-            Destroy(obj, 10f);
+            _fxInstances.Add(obj);
         }
-        
+        yield return new WaitForSeconds(10f);
+        ClearFxInstances();
         yield return null;
+    }
+    void ClearFxInstances() 
+    {
+        if (_fxInstances.Count==0)
+            return;
+
+        for (int i= _fxInstances.Count-1; i >= 0 ; i--){
+            Destroy(_fxInstances[i]);
+        }
+        _fxInstances.Clear();
     }
 }

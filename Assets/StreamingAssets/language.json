@@ -3,17 +3,24 @@
   {
     "maxChars": 
     {
-      "wood_description": 50
+      "tut_00_00": 50
     }
   },
    "en":
    {
-    "tut_00_00":"",
+    "tut_00_00":"Wow, I can't believe it's my first day at the Intergalactic Golf Course. I'm gonna make you proud, Mom!",
+    "tut_00_01":"Before you make your mom proud, how about you get back to work!  You're a good kid, but so unfocused...",
+    "tut_00_02":"Listen, I know these golfers.  They're bad, real bad.  But we can make 'em good, with da power of GRAVITY!",
+    "tut_00_03":"Gravity? That thing that pulls other objects toward their center of mass?",
+    "tut_00_04":"\"Thing\"!? Gravity is a force! It's what is being measured when you check your weight at home!",
+    "tut_00_05":"Here, try moving this planet until the gravitational forces get the golfer's arc to reach the hole. Fore!",
+    "tut_05_00":"This course is crazy!",
+    "tut_05_01":"You got this, just channel the caddie I know is in your bones!",
+    "tut_05_02":"Move the planets with lower mass away from the big one, and the ball can slingshot!",
     "start_button":"Start Game",
     "title":"Gravity Golf",
     "settings_button":"Settings",
     "load_button":"Load Game",
-    "quit_button":"Quit",
-    
+    "quit_button":"Quit"
    }
 }

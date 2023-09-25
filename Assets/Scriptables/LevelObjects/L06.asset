@@ -19,3 +19,4 @@ MonoBehaviour:
   levelPrefab: {fileID: 356507367428106387, guid: af34bea8aee492c4abb852ec3f53849d, type: 3}
   tutorialElements: []
   cameraSize: 25
+  arcLength: 100

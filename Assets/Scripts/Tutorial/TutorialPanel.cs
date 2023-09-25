@@ -38,17 +38,22 @@ using TMPro;
         string _lastTutDescriptionId = "";
         public void LoadTutorial(TutorialElement currTutElement)
         {
+            string nextText = currTutElement.tutText;
             //Set text and image
-            tutorialText.text = currTutElement.tutText;
+            if (currTutElement.tutText_locKey != "") 
+            {
+                nextText = GameManager.instance.localizationManager.GetContent(currTutElement.tutText_locKey);
+            }
+
             //tutorialText.text = GameManager.instance.localizationManager.GetContent(currTutElement.tutText);
             tutorialText.text = tutorialText.text.Replace("\\n", "\r\n\n");
             tutorialImage.enabled = currTutElement.tutImage != null;
             tutorialImage.sprite = currTutElement.tutImage;
             tutorialHeader.text = currTutElement.tutHeader;
-            _lastTutDescriptionId = currTutElement.tutText;
+            _lastTutDescriptionId = currTutElement.tutText_locKey;
             OpenPanel();
             if (_textRoutine != null) StopCoroutine(_textRoutine);
-            _textRoutine = StartCoroutine(RevealTutorialText(currTutElement.tutText));
+            _textRoutine = StartCoroutine(RevealTutorialText(nextText));
         }
     Coroutine _textRoutine;
     IEnumerator RevealTutorialText(string text) 

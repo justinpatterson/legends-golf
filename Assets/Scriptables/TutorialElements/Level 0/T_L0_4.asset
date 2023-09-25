@@ -15,5 +15,6 @@ MonoBehaviour:
   tutImage: {fileID: 21300000, guid: afee5a8aa0a314740bac9f7f28a62ad0, type: 3}
   tutText: '"Thing"!? Gravity is a force! It''s what is being measured when you check
     your weight at home! '
+  tutText_locKey: tut_00_04
   tutHeader: Manny
   autoProgress: 1

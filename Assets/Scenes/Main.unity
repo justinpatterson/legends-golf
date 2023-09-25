@@ -361,8 +361,6 @@ GameObject:
   m_Component:
   - component: {fileID: 565921566}
   - component: {fileID: 565921565}
-  - component: {fileID: 565921564}
-  - component: {fileID: 565921563}
   m_Layer: 0
   m_Name: FXCamera
   m_TagString: Untagged
@@ -370,28 +368,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &565921563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565921562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 057f852984d5fb14ab0731e908de51c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isActive: 1
-  objectTarget: {fileID: 0}
---- !u!81 &565921564
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565921562}
-  m_Enabled: 1
 --- !u!20 &565921565
 Camera:
   m_ObjectHideFlags: 0
@@ -596,7 +572,7 @@ MonoBehaviour:
   - phase: 6
     phaseLogic: {fileID: 1493461404}
   currentPhase: 0
-  localizationManager: {fileID: 0}
+  localizationManager: {fileID: 1003736816}
 --- !u!4 &1003736811
 Transform:
   m_ObjectHideFlags: 0
@@ -5838,7 +5814,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3b8920f2398f3845b823100cf4c083c, type: 2}
   - {fileID: 11400000, guid: 1ffe40a4091b2b140946a72176456818, type: 2}
   - {fileID: 11400000, guid: c96075262c373ca4e867e7d615889aa2, type: 2}
-  - {fileID: 11400000, guid: 4f2a434a5c717ec49b716e6469194054, type: 2}
+  - {fileID: 11400000, guid: 9435bd4c281f4f94196e4668c56938f8, type: 2}
   currentGameplayPhase: 0
   countdown: 5
   maxCountdown: 30

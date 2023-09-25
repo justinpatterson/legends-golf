@@ -10,6 +10,8 @@ public class TutorialElement : ScriptableObject
     [SerializeField]
     public string tutText;
     [SerializeField]
+    public string tutText_locKey;
+    [SerializeField]
     public string tutHeader;
 
 

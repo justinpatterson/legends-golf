@@ -28,28 +28,10 @@ public class GravitySim : MonoBehaviour
 
     private void Awake()
     {
-        bool success = false;
-        GameDataManager.GameData.LevelData ld = GameDataManager.instance.GetLevelData(GP_Gameplay.levelIndexSelected, out success);
-        if (success && false) //don't want to modify length for now 
+        GP_Gameplay gp = GameManager.instance.GetCurrentGamePhase() as GP_Gameplay;
+        if (gp != null) //don't want to modify length for now 
         {
-            switch (ld.levelIndex) 
-            {
-                case 0:
-                    visualizeDistance = 100;
-                    break;
-                case 1:
-                    visualizeDistance = 80;
-                    break;
-                case 2:
-                    visualizeDistance = 50;
-                    break;
-                case 3:
-                    visualizeDistance = 40;
-                    break;
-                default:
-                    visualizeDistance = 20;
-                    break;
-            }
+            visualizeDistance = gp.GetLevelArcLength();
         }
         rb = GetComponent<Rigidbody2D>();
 
@@ -91,7 +73,7 @@ public class GravitySim : MonoBehaviour
         }
     }
     public GameObject teePodiumPivotRef;
-    [Range(1, 100)]
+    [Range(1, 300)]
     public int visualizeDistance = 100;
 
     private void FixedUpdate()

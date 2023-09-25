@@ -15,5 +15,6 @@ MonoBehaviour:
   tutImage: {fileID: 21300000, guid: afee5a8aa0a314740bac9f7f28a62ad0, type: 3}
   tutText: 'Before you make your mom proud, how about you get back to work!  You''re
     a good kid, but so unfocused...  '
+  tutText_locKey: tut_00_01
   tutHeader: Manny
   autoProgress: 1
