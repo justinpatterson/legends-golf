@@ -16,7 +16,7 @@ MonoBehaviour:
   levelIndex: 0
   parCount: 4
   defaultDifficulty: 0
-  levelPrefab: {fileID: 356507367428106387, guid: 65857d36c6b4196428569a553908d495, type: 3}
+  levelPrefab: {fileID: 356507367428106387, guid: 059d0d4db8cabb1489302b67bc58740a, type: 3}
   tutorialElements:
   - {fileID: 11400000, guid: 957442ac42b8bc14496068978125df26, type: 2}
   - {fileID: 11400000, guid: d8301b4febdc94049bb67cce0d8bb47e, type: 2}
@@ -24,3 +24,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9dbbe1aee66def04da00ccaeb079e5bf, type: 2}
   - {fileID: 11400000, guid: 06381b411680f2e4da62b47d76e90d4b, type: 2}
   - {fileID: 11400000, guid: f9b6951682f16004ba4759734801a8c8, type: 2}
+  cameraSize: 10
+  arcLength: 100

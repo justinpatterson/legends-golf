@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: L06
   m_EditorClassIdentifier: 
   levelName: Hole in Fun
-  levelIndex: 4
+  levelIndex: 6
   parCount: 4
   defaultDifficulty: 1
   levelPrefab: {fileID: 356507367428106387, guid: af34bea8aee492c4abb852ec3f53849d, type: 3}

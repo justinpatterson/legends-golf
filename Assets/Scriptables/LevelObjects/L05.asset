@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: L05
   m_EditorClassIdentifier: 
   levelName: Hole in Fun
-  levelIndex: 4
+  levelIndex: 5
   parCount: 4
   defaultDifficulty: 1
   levelPrefab: {fileID: 356507367428106387, guid: 78d1da8d7db14634ca9ed2526831bc41, type: 3}
@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 94808a3ae7bbb924c811d0456639c07f, type: 2}
   - {fileID: 11400000, guid: 9f550c31dcbaaa4418cc49fb37c12c5d, type: 2}
   cameraSize: 25
+  arcLength: 100
