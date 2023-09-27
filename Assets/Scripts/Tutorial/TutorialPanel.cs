@@ -83,13 +83,14 @@ using TMPro;
         public override void ClosePanel()
         {
             base.ClosePanel();
-
-            TutorialManager tutMan = GameManager.instance.tutorialManager;
-
-            if (tutMan != null) 
+             
+            if (GameManager.instance.tutorialManager != null) 
             {
-                tutMan.TriggerTutorialIteration();
+                GameManager.instance.tutorialManager.TriggerTutorialIteration();
             }
         }
-
+        public virtual void TriggerTTS() 
+        {
+            GameManager.instance.ttsManager.TextToSpeech("Not implemented.");
+        }
     }

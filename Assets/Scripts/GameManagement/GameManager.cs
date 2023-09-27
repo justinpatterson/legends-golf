@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     GamePhase _currentPhaseLogic;
     public Localization.LocalizationManager localizationManager;
     public TutorialManager tutorialManager;
+    public TTSManager ttsManager;
 
     public static GameManager instance;
     private void Awake()
