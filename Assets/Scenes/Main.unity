@@ -573,6 +573,7 @@ MonoBehaviour:
     phaseLogic: {fileID: 1493461404}
   currentPhase: 0
   localizationManager: {fileID: 1003736816}
+  tutorialManager: {fileID: 1003736813}
 --- !u!4 &1003736811
 Transform:
   m_ObjectHideFlags: 0

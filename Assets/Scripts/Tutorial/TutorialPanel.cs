@@ -83,8 +83,8 @@ using TMPro;
         public override void ClosePanel()
         {
             base.ClosePanel();
-                
-            TutorialManager tutMan = FindObjectOfType<TutorialManager>();
+
+            TutorialManager tutMan = GameManager.instance.tutorialManager;
 
             if (tutMan != null) 
             {

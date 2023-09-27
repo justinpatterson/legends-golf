@@ -15,6 +15,6 @@ MonoBehaviour:
   tutImage: {fileID: 21300000, guid: afee5a8aa0a314740bac9f7f28a62ad0, type: 3}
   tutText: Listen, I know these golfers.  They're bad, real bad.  But we can make
     'em good, with da power of GRAVITY!
-  tutText_locKey: tut_00_02
+  tutText_locKey: 
   tutHeader: Manny
   autoProgress: 1
