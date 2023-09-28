@@ -146,7 +146,7 @@ public class GameDataManager : MonoBehaviour
             public int currencyAmt = 0;
             public int customBallId = -1;
             public int customCharId = -1;
-
+            public int customPetId = -1;
 
             public void EquipItem(InventoryObject io) 
             {
@@ -157,6 +157,10 @@ public class GameDataManager : MonoBehaviour
                 else if (io.itemType == InventoryObject.ItemTypes.Character)
                 {
                     customCharId = io.itemIndex;
+                }
+                else if (io.itemType == InventoryObject.ItemTypes.Pet)
+                {
+                    customPetId = io.itemIndex;
                 }
             }
         }
