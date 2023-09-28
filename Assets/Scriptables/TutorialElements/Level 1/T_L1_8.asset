@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2c0cce1e1d76c48b8e540e570ef84c, type: 3}
   m_Name: T_L1_8
   m_EditorClassIdentifier: 
-  tutImage: {fileID: 21300000, guid: 3afc7979c5eb19b4fa693f9468dcd374, type: 3}
+  tutImage: {fileID: 21300000, guid: afee5a8aa0a314740bac9f7f28a62ad0, type: 3}
   tutText: ... that way, we'll get some good tips to use at the gift shop!
+  tutText_locKey: tut_01_08
   tutHeader: Manny
   autoProgress: 1

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutImage: {fileID: 21300000, guid: 6777cb42460f8d84d814c6cb3b1a251a, type: 3}
   tutText: What do I do, Manny!?
+  tutText_locKey: tut_01_06
   tutHeader: KT
   autoProgress: 1

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: T_L5_2
   m_EditorClassIdentifier: 
   tutImage: {fileID: 21300000, guid: afee5a8aa0a314740bac9f7f28a62ad0, type: 3}
-  tutText: Move the planets with lower mass away from the big one, and you might
-    be able to slingshot the ball backward!
+  tutText: Move the lower mass planets away from the largest one, and the ball can
+    slingshot!
   tutText_locKey: tut_05_02
-  tutHeader: Mannie
+  tutHeader: Manny
   autoProgress: 1
