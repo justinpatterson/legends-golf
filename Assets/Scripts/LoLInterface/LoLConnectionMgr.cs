@@ -47,7 +47,9 @@ public class LoLConnectionMgr : MonoBehaviour
         if (phase == GameManager.GamePhases.Results)
         {
             //LOLSDK.Instance.SubmitProgress()
-
+            int score, progress, maxProgress = 0;
+            CalculateProgress(out score, out progress, out maxProgress);
+            LOLSDK.Instance.SubmitProgress(score, progress, maxProgress);
         }
         else if (phase == GameManager.GamePhases.LevelSelect) 
         {
@@ -107,4 +109,22 @@ public class LoLConnectionMgr : MonoBehaviour
         //_feedbackMethod = StartCoroutine(_Feedback(GetText("autoSave")));
     }
 
+
+    void CalculateProgress(out int score, out int progress, out int maxProgress) 
+    {
+        score = 0;
+        progress = 0;
+        maxProgress = 0;
+        for(int i = 0; i <= 6; i++) 
+        {
+            bool success = false;
+            GameDataManager.GameData.LevelData ld = GameDataManager.instance.GetLevelData(i, out success);
+            if (success) 
+            {
+                score += ld.starCount;
+                progress += ld.starCount > 0 ? 1 : 0;
+            }
+            maxProgress += 1;
+        }
+    }
 }

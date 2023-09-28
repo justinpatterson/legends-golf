@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class TTSManager : MonoBehaviour
 {
-    AudioSource audioSpeaker;
+    protected AudioSource audioSpeaker;
     public void Start()
     {
         audioSpeaker = GetComponent<AudioSource>();
     }
-    public void TextToSpeech(string Text)
+    public virtual void TextToSpeech(string Text)
     {
         Debug.Log("TTS Is Not Implemented.");
     /*

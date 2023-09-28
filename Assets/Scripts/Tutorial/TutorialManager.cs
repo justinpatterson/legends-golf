@@ -60,4 +60,12 @@ using System;
                 tutPanel.LoadTutorial(_lastTutorial);
             }
         }
+
+        public TutorialElement GetCurrentTutorialElement() 
+        {
+            if (_lastTutorial != null)
+                return _lastTutorial;
+            TutorialElement tutorialElement = null;
+            return tutorialElement;
+        }
     }
