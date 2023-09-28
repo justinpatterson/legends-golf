@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterViewController : MonoBehaviour
 {
+
     public SpriteRenderer characterRenderer;
     public enum CharacterStates
     {
@@ -18,7 +19,13 @@ public class CharacterViewController : MonoBehaviour
     [SerializeField]
     public CharacterStateSprites[] charSprites;
 
+    public CharacterViewController[] subCharacters;
+    
     private void Awake()
+    {
+        InitializeCharacter();
+    }
+    protected virtual void InitializeCharacter() 
     {
         if (GameDataManager.instance.gameData.playerData.customCharId != -1)
         {
@@ -29,13 +36,16 @@ public class CharacterViewController : MonoBehaviour
             SetCharacterState(CharacterStates.Idle);
         }
     }
-
     public void SetCharacterState(CharacterStates state) 
     {
         //eventually this could be in an animator to play a sprite series, but we'll both change a state AND swap textures here.
         characterRenderer.sprite = GetCharacterSprite(state);
+        foreach (CharacterViewController controller in subCharacters) 
+        {
+            controller.SetCharacterState(state);
+        }
     }
-    void SetCharacterSprite(CharacterStates state, Sprite sprite)
+    protected void SetCharacterSprite(CharacterStates state, Sprite sprite)
     {
         for (int i = 0; i < charSprites.Length; i++)
         {
@@ -47,7 +57,7 @@ public class CharacterViewController : MonoBehaviour
         }
     }
 
-    Sprite GetCharacterSprite(CharacterStates state) 
+    protected Sprite GetCharacterSprite(CharacterStates state) 
     {
         Sprite returnSprite = null;
         foreach(CharacterStateSprites charSp in charSprites) 
