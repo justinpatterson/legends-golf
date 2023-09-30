@@ -496,6 +496,7 @@ MonoBehaviour:
     phaseLogic: {fileID: 1493461404}
   currentPhase: 0
   localizationManager: {fileID: 1003736816}
+  tutorialManager: {fileID: 1003736813}
   ttsManager: {fileID: 561927491}
 --- !u!4 &1003736811
 Transform:
@@ -537,10 +538,12 @@ MonoBehaviour:
       currencyAmt: 0
       customBallId: -1
       customCharId: -1
+      customPetId: -1
   masterInventoryList:
   - {fileID: 11400000, guid: ea7c4953caab251408f57c36beadcabf, type: 2}
   - {fileID: 11400000, guid: 7da55eec1a5e69e428c000605c89a231, type: 2}
   - {fileID: 11400000, guid: 6abe54553d1322e4c952b925bcbbae84, type: 2}
+  - {fileID: 11400000, guid: b29d25117fef80342ae3245e6f6755b7, type: 2}
 --- !u!114 &1003736813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2551,6 +2554,10 @@ PrefabInstance:
     - target: {fileID: 7733562226379493483, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734212065551072978, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7773514344703464616, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchorMax.x
