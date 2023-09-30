@@ -73,13 +73,51 @@ public class EquipPanel : UIPanel
                 }
             }
         }
+        if (GameDataManager.instance.gameData.playerData.customCharId!=-1)
+        {
+            int charIndex = GameDataManager.instance.gameData.playerData.customCharId;
+            InventoryObject io = GameDataManager.instance.GetInventoryItem(charIndex);
+            foreach (ES_ToEquip slot in equipmentSlots)
+            {
+                if (slot.targetType == InventoryObject.ItemTypes.Character)
+                {
+                    GameObject elementInst = Instantiate(equipmentElementPrefab);
+                    EquipElement element = elementInst.GetComponent<EquipElement>();
+                    element.InitializeElement(io);
+                    element.currentSlot = slot;
+                    slot.AddItemToSlot(element);
+                    element.transform.SetParent(slot.transform, false);
+                    element.transform.localPosition = Vector3.zero;
+                    elementInst.name = "INSTANCE";
+                }
+            }
+        }
+        if (GameDataManager.instance.gameData.playerData.customPetId!=-1)
+        {
+            int petIndex= GameDataManager.instance.gameData.playerData.customPetId;
+            InventoryObject io = GameDataManager.instance.GetInventoryItem(petIndex);
+            foreach (ES_ToEquip slot in equipmentSlots)
+            {
+                if (slot.targetType == InventoryObject.ItemTypes.Pet)
+                {
+                    GameObject elementInst = Instantiate(equipmentElementPrefab);
+                    EquipElement element = elementInst.GetComponent<EquipElement>();
+                    element.InitializeElement(io);
+                    element.currentSlot = slot;
+                    slot.AddItemToSlot(element);
+                    element.transform.SetParent(slot.transform, false);
+                    element.transform.localPosition = Vector3.zero;
+                    elementInst.name = "INSTANCE";
+                }
+            }
+        }
     }
     void InitializeInventory() 
     {
         int inventoryIndex = 0;
         foreach(int key in GameDataManager.instance.gameData.purchaseData.purchaseMap.Keys)
         {
-            if (key == GameDataManager.instance.gameData.playerData.customBallId) { } //these will go in equip section, not grid
+            if (key == GameDataManager.instance.gameData.playerData.customBallId || key == GameDataManager.instance.gameData.playerData.customCharId || key == GameDataManager.instance.gameData.playerData.customPetId) { } //these will go in equip section, not grid
             else 
             {
                 if(GameDataManager.instance.gameData.purchaseData.HasPurchasedItem(key))
