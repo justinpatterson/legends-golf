@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutImage: {fileID: 21300000, guid: 6777cb42460f8d84d814c6cb3b1a251a, type: 3}
   tutText: Gravity? That thing that pulls other objects toward their center of mass?
-  tutText_locKey: 
+  tutText_locKey: tut_00_03
   tutHeader: KT
   autoProgress: 1

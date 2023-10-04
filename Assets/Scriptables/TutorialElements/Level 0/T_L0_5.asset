@@ -15,6 +15,6 @@ MonoBehaviour:
   tutImage: {fileID: 21300000, guid: afee5a8aa0a314740bac9f7f28a62ad0, type: 3}
   tutText: Here, try moving this planet until the gravitational forces get the golfer's
     arc to reach the hole. Fore!
-  tutText_locKey: 
+  tutText_locKey: tut_00_05
   tutHeader: Manny
   autoProgress: 1

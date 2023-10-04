@@ -27,3 +27,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4a801b781a448c040bdafae43ab72ea7, type: 2}
   - {fileID: 11400000, guid: aab0bd50954e06e48bdb327fb1339d80, type: 2}
   - {fileID: 11400000, guid: e4b71a7b1b2c5c549b08cf794d9f49e9, type: 2}
+  cameraSize: 10
+  arcLength: 100

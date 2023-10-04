@@ -88,6 +88,7 @@ public class LoLConnectionMgr : MonoBehaviour
     {
         if (string.IsNullOrEmpty(langJSON))
             return;
+        GameManager.instance.localizationManager.SerializeLocalization(langJSON);
         //I don't believe we'll need to update the GameManager.instance.localizationManager.json but we could if want.
     }
     void Save()
