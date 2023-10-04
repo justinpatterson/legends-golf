@@ -15,7 +15,7 @@ public class MenuMgr : MonoBehaviour
     }
 
     public UIPanel _lastPhasePanel;
-
+    public UIPanel gameOverPanel;
     private void Awake()
     {
         GameManager.OnPhaseTransition += PhaseTransitionMenuBehavior;
