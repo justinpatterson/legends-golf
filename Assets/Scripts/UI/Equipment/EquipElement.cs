@@ -31,7 +31,12 @@ public class EquipElement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         inventoryReference = item;
         if (iconImg != null)
-            iconImg.sprite = inventoryReference.sprites[0];
+        {
+            if (inventoryReference.iconSprite != null)
+                iconImg.sprite = inventoryReference.iconSprite;
+            else
+                iconImg.sprite = inventoryReference.sprites[0];
+        }
     }
 
     Vector3 CalculateOffsetFromPointerDelta(Vector2 delta) 
