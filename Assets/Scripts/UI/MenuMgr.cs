@@ -29,6 +29,14 @@ public class MenuMgr : MonoBehaviour
         _lastPhasePanel?.ClosePanel();
         _lastPhasePanel = GetMenuForPhase(phase);
         _lastPhasePanel?.OpenPanel();
+
+        if (phase == GameManager.GamePhases.LevelSelect)
+        {
+            if (GameManager.instance.HasFinishedAllLevels())
+            {
+                gameOverPanel.OpenPanel();
+            }
+        }
     }
     UIPanel GetMenuForPhase(GameManager.GamePhases phase) 
     {

@@ -71,6 +71,24 @@ public class GameManager : MonoBehaviour
         }
         _currentPhaseLogic?.StartPhase();
         OnPhaseTransition?.Invoke(currentPhase);
+
+    }
+
+    public bool HasFinishedAllLevels() 
+    {
+        bool hasFinished = true;
+        for (int i = 0; i < 7; i++)
+        {
+            bool foundLevel = false;
+            GameDataManager.GameData.LevelData ld = GameDataManager.instance.GetLevelData(i, out foundLevel);
+            if (foundLevel)
+            {
+                hasFinished &= ld.starCount>0;
+            }
+            else
+                return false;
+        }
+        return hasFinished;
     }
 
     public GamePhase GetCurrentGamePhase() {
