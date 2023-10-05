@@ -11,12 +11,14 @@ public class GameDataManager : MonoBehaviour
     public InventoryObject[] masterInventoryList;
     private void Update()
     {
+#if UNITY_EDITOR
         //just testing that we can equip an item
         if (Input.GetKeyDown(KeyCode.E)) 
         {
             InventoryObject io = masterInventoryList[0];
             gameData.playerData.EquipItem(io);
         }
+#endif
     }
     public GameData.LevelData GetLevelData(int levelIndex, out bool success)
     {
