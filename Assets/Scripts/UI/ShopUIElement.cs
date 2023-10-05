@@ -23,7 +23,7 @@ public class ShopUIElement : MonoBehaviour
         if (GameDataManager.instance.masterInventoryList.Length>masterInventoryIndex) 
         {
             InventoryObject io = GameDataManager.instance.masterInventoryList[masterInventoryIndex];
-            icon.sprite = io.sprites[0];
+            icon.sprite = io.iconSprite != null ? io.iconSprite : io.sprites[0];
             title.text = io.name;
             costText.text = io.itemCost.ToString("00");
             bool hasPurchased = GameDataManager.instance.gameData.purchaseData.HasPurchasedItem(masterInventoryIndex);
