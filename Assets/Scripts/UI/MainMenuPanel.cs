@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class MainMenuPanel : UIPanel
 {
     public Button startGameButton;
+    public Button continueGameButton;
     public override void OpenPanel()
     {
         base.OpenPanel();
         startGameButton.onClick.RemoveAllListeners();
         startGameButton.onClick.AddListener(() => OnStartButtonPressed());
+        continueGameButton.onClick.RemoveAllListeners();
+        continueGameButton.onClick.AddListener(() => OnStartButtonPressed());
     }
 
     private void OnStartButtonPressed()

@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 5882477173769782348}
   - component: {fileID: 4464361351416754473}
   - component: {fileID: 539943468720045173}
+  - component: {fileID: 314021787381052463}
   m_Layer: 0
   m_Name: Exit Game
   m_TagString: Untagged
@@ -270,6 +271,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localizationId: quit_button
   ProTextTarget: {fileID: 1860296887960660308}
+--- !u!114 &314021787381052463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585487667916136582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5a1b76a0b66a145a4fc71f5a1f26c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1803955794604285340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1058,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6433468981359544357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6554255754822773910}
+        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4780532098706988169
 MonoBehaviour:
   m_ObjectHideFlags: 0

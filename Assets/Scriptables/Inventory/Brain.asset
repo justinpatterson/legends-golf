@@ -21,4 +21,4 @@ MonoBehaviour:
   sprites:
   - {fileID: -634125973, guid: 9ecd08f0f21cfd34ebab886ad657c504, type: 3}
   - {fileID: 284697791, guid: 51f2d7d6860623c4c9718356b926359f, type: 3}
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: -1315408678, guid: 9ecd08f0f21cfd34ebab886ad657c504, type: 3}
