@@ -455,6 +455,18 @@ PrefabInstance:
       propertyPath: gravityObjs.Array.data[5]
       value: 
       objectReference: {fileID: 4115449266080364193}
+    - target: {fileID: 7349606065519891647, guid: 91f615b1836b4d544b5d623a39c60139, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349606065519891647, guid: 91f615b1836b4d544b5d623a39c60139, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349606065519891647, guid: 91f615b1836b4d544b5d623a39c60139, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
