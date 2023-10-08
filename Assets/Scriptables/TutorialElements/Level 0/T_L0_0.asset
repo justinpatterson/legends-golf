@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2c0cce1e1d76c48b8e540e570ef84c, type: 3}
   m_Name: T_L0_0
   m_EditorClassIdentifier: 
-  tutImage: {fileID: 21300000, guid: 6777cb42460f8d84d814c6cb3b1a251a, type: 3}
+  tutImage: {fileID: -1894265852, guid: 6e136a626b6907c40b3598916dfae3b8, type: 3}
   tutText: Wow, I can't believe it's my first day at the Intergalactic Golf Course.
     I'm gonna make you proud, Mom!
   tutText_locKey: tut_00_00
