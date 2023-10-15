@@ -14,6 +14,7 @@ public class PlayPanel : UIPanel
     //public TextMeshProUGUI launchPhaseCountdown;
     public TextMeshProUGUI strokeCount, parCount;
     public TimerUI timerUI;
+    public UIPanel infoPanel;
     public override void OpenPanel()
     {
         base.OpenPanel();
@@ -71,8 +72,23 @@ public class PlayPanel : UIPanel
     public void InfoButtonClicked() 
     {
         _currentToggle = !_currentToggle;
-        Debug.Log("Info clikced! " + _currentToggle);
+        Debug.Log("Info clicked! " + _currentToggle);
+
+        GP_Gameplay gp = (GP_Gameplay)GameManager.instance.GetCurrentGamePhase();
+        LevelObject lo = gp.levels[GP_Gameplay.levelIndexSelected];
+        if (lo.infoScreenKey == "")
+            return;
+
+        infoPanel?.OpenPanel();
+
         if(OnInfoButtonClicked!=null)
             OnInfoButtonClicked(_currentToggle);
+    }
+    public void CloseInfoScreen() 
+    {
+        infoPanel?.ClosePanel();
+
+        if (_currentToggle)
+            InfoButtonClicked();
     }
 }

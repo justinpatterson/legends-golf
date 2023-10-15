@@ -12,4 +12,6 @@ public class LevelObject : ScriptableObject
     public TutorialElement[] tutorialElements;
     public float cameraSize = 10;
     public int arcLength = 100;
+    public string infoScreenKey = "";
+    public Sprite infoScreenSprite;
 }
