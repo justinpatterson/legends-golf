@@ -25,7 +25,7 @@ public class MoveableObject : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<CircleCollider2D>();
         if (col!=null) _radiusLimiterColliderOffset = col.radius;
-        PlayPanel.OnInfoButtonClicked += ReportInfo;
+    //    PlayPanel.OnInfoButtonClicked += ReportInfo;
     }
 
     private void ReportInfo(bool toggleState)
@@ -41,7 +41,7 @@ public class MoveableObject : MonoBehaviour
     }
     private void OnDestroy()
     {
-        PlayPanel.OnInfoButtonClicked -= ReportInfo;
+    //    PlayPanel.OnInfoButtonClicked -= ReportInfo;
     }
 
     private void FixedUpdate()

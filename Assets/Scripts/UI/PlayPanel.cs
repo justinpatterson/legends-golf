@@ -72,6 +72,7 @@ public class PlayPanel : UIPanel
     {
         _currentToggle = !_currentToggle;
         Debug.Log("Info clikced! " + _currentToggle);
-        OnInfoButtonClicked(_currentToggle);
+        if(OnInfoButtonClicked!=null)
+            OnInfoButtonClicked(_currentToggle);
     }
 }
