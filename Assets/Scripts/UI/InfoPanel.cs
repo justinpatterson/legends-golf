@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class InfoPanel : UIPanel
 {
-    LocalizationHelper infoTextHelper;
-    Image infoImage;
+    public LocalizationHelper infoTextHelper;
+    public Image infoImage;
     public override void OpenPanel()
     {
         GP_Gameplay gp = GameManager.instance.GetCurrentGamePhase() as GP_Gameplay;
