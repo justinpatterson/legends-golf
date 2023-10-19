@@ -27,7 +27,7 @@ public class InfoPanel : UIPanel
         Time.timeScale = 1f;
         base.ClosePanel();
     }
-    public void OnTTSClicked() 
+    public virtual void OnTTSClicked() 
     {
     
     }
