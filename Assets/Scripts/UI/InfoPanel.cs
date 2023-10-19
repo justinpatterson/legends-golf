@@ -10,6 +10,7 @@ public class InfoPanel : UIPanel
     public Image infoImage;
     public override void OpenPanel()
     {
+        //timescale does technically break the cute animation
         Time.timeScale = 0f;
         GP_Gameplay gp = GameManager.instance.GetCurrentGamePhase() as GP_Gameplay;
         if (gp != null)
