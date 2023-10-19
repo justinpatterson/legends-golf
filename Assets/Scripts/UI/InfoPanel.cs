@@ -12,10 +12,10 @@ public class InfoPanel : UIPanel
     {
         Time.timeScale = 0f;
         GP_Gameplay gp = GameManager.instance.GetCurrentGamePhase() as GP_Gameplay;
-        if (gp != null) 
+        if (gp != null)
         {
             LevelObject lo = gp.levels[GP_Gameplay.levelIndexSelected];
-            if(infoTextHelper != null)
+            if (infoTextHelper != null)
                 infoTextHelper.RefreshLocalization(lo.infoScreenKey);
             if (infoImage != null)
                 infoImage.sprite = lo.infoScreenSprite;
@@ -27,9 +27,9 @@ public class InfoPanel : UIPanel
         Time.timeScale = 1f;
         base.ClosePanel();
     }
-    public void OnTTSClicked() 
+    public virtual void OnTTSClicked()
     {
-    
+
     }
 
 }
