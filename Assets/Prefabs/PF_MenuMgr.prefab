@@ -11680,7 +11680,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &8728820129369508629
 MonoBehaviour:
@@ -15640,6 +15640,10 @@ PrefabInstance:
     - target: {fileID: 2996456440258582223, guid: fb337339d8736f44d9fc828c3d49a266, type: 3}
       propertyPath: m_Name
       value: PF_InfoPanel_LOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996456440258582223, guid: fb337339d8736f44d9fc828c3d49a266, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7769075045771375699, guid: fb337339d8736f44d9fc828c3d49a266, type: 3}
       propertyPath: m_Pivot.x
