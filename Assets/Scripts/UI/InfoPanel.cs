@@ -10,6 +10,7 @@ public class InfoPanel : UIPanel
     public Image infoImage;
     public override void OpenPanel()
     {
+        Time.timeScale = 0f;
         GP_Gameplay gp = GameManager.instance.GetCurrentGamePhase() as GP_Gameplay;
         if (gp != null) 
         {
@@ -20,6 +21,15 @@ public class InfoPanel : UIPanel
                 infoImage.sprite = lo.infoScreenSprite;
         }
         base.OpenPanel();
+    }
+    public override void ClosePanel()
+    {
+        Time.timeScale = 1f;
+        base.ClosePanel();
+    }
+    public void OnTTSClicked() 
+    {
+    
     }
 
 }
