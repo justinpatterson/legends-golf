@@ -15645,6 +15645,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5347382110759654296, guid: fb337339d8736f44d9fc828c3d49a266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8290332853670068208}
+    - target: {fileID: 5347382110759654296, guid: fb337339d8736f44d9fc828c3d49a266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseInfoScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347382110759654296, guid: fb337339d8736f44d9fc828c3d49a266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7769075045771375699, guid: fb337339d8736f44d9fc828c3d49a266, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
