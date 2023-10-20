@@ -89,6 +89,8 @@ public class PlayPanel : UIPanel
         infoPanel?.ClosePanel();
 
         if (_currentToggle)
-            InfoButtonClicked();
+            _currentToggle = false;
+        if (OnInfoButtonClicked!=null)
+            OnInfoButtonClicked(_currentToggle);
     }
 }
