@@ -2851,6 +2851,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1619022447572474254, guid: ea938ebc413186a4d88731c39c382535, type: 3}
   m_PrefabInstance: {fileID: 1841654194782029711}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1841654194782029715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8290332853670068208, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+  m_PrefabInstance: {fileID: 1841654194782029711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f447542bb23184489e028302423e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7294892128547690401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2866,6 +2877,18 @@ PrefabInstance:
     - target: {fileID: 3039284120008546548, guid: 2842f1a9f5bc8c0499fb071b48bee3a1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300048737518263715, guid: 2842f1a9f5bc8c0499fb071b48bee3a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1841654194782029715}
+    - target: {fileID: 5300048737518263715, guid: 2842f1a9f5bc8c0499fb071b48bee3a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseInfoScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300048737518263715, guid: 2842f1a9f5bc8c0499fb071b48bee3a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayPanel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7523673414588889704, guid: 2842f1a9f5bc8c0499fb071b48bee3a1, type: 3}
       propertyPath: m_Pivot.x
