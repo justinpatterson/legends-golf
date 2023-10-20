@@ -199,6 +199,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoTextHelper: {fileID: 2578163387241534783}
   infoImage: {fileID: 8343091887678331972}
+  infoDrawingPivot: {fileID: 4433767986055439024}
+  _spawnedDrawing: {fileID: 0}
+--- !u!224 &4433767986055439024 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4485534592325282955, guid: 2842f1a9f5bc8c0499fb071b48bee3a1, type: 3}
+  m_PrefabInstance: {fileID: 268027452395294267}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8343091887678331972 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8102156401860776575, guid: 2842f1a9f5bc8c0499fb071b48bee3a1, type: 3}

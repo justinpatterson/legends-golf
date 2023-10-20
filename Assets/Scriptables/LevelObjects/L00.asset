@@ -28,4 +28,4 @@ MonoBehaviour:
   cameraSize: 10
   arcLength: 100
   infoScreenKey: hint_00
-  infoScreenSprite: {fileID: 21300000, guid: 0e2c29dd3920c42449337a72e5dfcbec, type: 3}
+  infoScreenDrawingPrefab: {fileID: 6753142675885497184, guid: 06149143774922344a86e021db57d15a, type: 3}
