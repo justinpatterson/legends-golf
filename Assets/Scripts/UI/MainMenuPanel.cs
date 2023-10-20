@@ -13,7 +13,7 @@ public class MainMenuPanel : UIPanel
         startGameButton.onClick.AddListener(() => OnStartButtonPressed());
     }
 
-    private void OnStartButtonPressed()
+    protected void OnStartButtonPressed()
     {
         AudioManager.instance.TriggerSFX(AudioManager.AudioKeys.Click);
         GP_MainMenu mainMenuPhase = (GP_MainMenu)GameManager.instance.GetCurrentGamePhase();
