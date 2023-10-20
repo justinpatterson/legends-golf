@@ -80,9 +80,16 @@ public class LoLConnectionMgr : MonoBehaviour
     {
         // Overrides serialized state data or continues with editor serialized values.
         if (loadedGameData != null)
+        {
             GameDataManager.instance.gameData = loadedGameData;
+            OnDataLoaded?.Invoke(true);
+        }
+        else 
+            OnDataLoaded?.Invoke(false);
 
     }
+    public delegate void DataLoaded(bool success);
+    public DataLoaded OnDataLoaded;
 
     void LanguageUpdate(string langJSON)
     {

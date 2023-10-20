@@ -1176,7 +1176,7 @@ MonoBehaviour:
   - phase: 2
     menu: {fileID: 8290332853670068208}
   - phase: 1
-    menu: {fileID: 6095517101066903511}
+    menu: {fileID: 2917620302595229312}
   - phase: 4
     menu: {fileID: 6822500810563746034}
   - phase: 5
@@ -13370,7 +13370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 686271401826261537}
-  - component: {fileID: 6095517101066903511}
+  - component: {fileID: 2917620302595229312}
   m_Layer: 0
   m_Name: MainPanel
   m_TagString: Untagged
@@ -13399,7 +13399,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6095517101066903511
+--- !u!114 &2917620302595229312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13408,11 +13408,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8084290049510830923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47ed109ffc56de144bc16c695f3c9ddb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b9a57e22b33af94588ebd9b1a4b33e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startGameButton: {fileID: 6633918357625436396}
   continueGameButton: {fileID: 7256509036872435128}
+  LoLConnectionMgr: {fileID: 0}
 --- !u!1 &8158485535803798951
 GameObject:
   m_ObjectHideFlags: 0
