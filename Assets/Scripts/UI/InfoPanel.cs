@@ -8,6 +8,8 @@ public class InfoPanel : UIPanel
 {
     public LocalizationHelper infoTextHelper;
     public Image infoImage;
+    public Transform infoDrawingPivot;
+    public GameObject _spawnedDrawing;
     public override void OpenPanel()
     {
         //Time.timeScale = 0f;
@@ -17,8 +19,14 @@ public class InfoPanel : UIPanel
             LevelObject lo = gp.levels[GP_Gameplay.levelIndexSelected];
             if(infoTextHelper != null)
                 infoTextHelper.RefreshLocalization(lo.infoScreenKey);
-            if (infoImage != null)
-                infoImage.sprite = lo.infoScreenSprite;
+
+            if (_spawnedDrawing)
+                Destroy(_spawnedDrawing);
+
+            if (infoDrawingPivot != null && lo.infoScreenDrawingPrefab != null) 
+            {
+                _spawnedDrawing = Instantiate(lo.infoScreenDrawingPrefab, infoDrawingPivot);
+            }
         }
         base.OpenPanel();
     }

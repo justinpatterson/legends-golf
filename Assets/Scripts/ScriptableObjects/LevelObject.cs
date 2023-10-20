@@ -13,5 +13,5 @@ public class LevelObject : ScriptableObject
     public float cameraSize = 10;
     public int arcLength = 100;
     public string infoScreenKey = "";
-    public Sprite infoScreenSprite;
+    public GameObject infoScreenDrawingPrefab;
 }
