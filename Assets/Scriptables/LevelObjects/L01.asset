@@ -29,5 +29,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e4b71a7b1b2c5c549b08cf794d9f49e9, type: 2}
   cameraSize: 10
   arcLength: 100
-  infoScreenKey: 
+  infoScreenKey: hint_01
   infoScreenDrawingPrefab: {fileID: 6753142675885497184, guid: 513dc02f2c0085348a16ae60bc668045, type: 3}
