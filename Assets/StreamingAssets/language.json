@@ -79,8 +79,9 @@
     "congrats_desc": "You have beaten all the stages, great job!  You may exit the game or continue playing to earn collectables and improve your ratings.",
     "continue_button": "Keep Playing",
     "hint_00": "Any objects with the <b>flashing star icon</b> can be moved. Planets, the golfer's podium, satellites, meteors... you name it!",
-    "hint_01": "Sometimes, gravity can lead the golf ball to continuously go around a planet in an <b>orbit</b>, just like the moon.  If that happens, the ball will reset when the timer runs out (or you press the restart button).",
-    "hint_02": "Just like Manny said, your weight on Earth is actually measuring the gravitational force between it and you. The bigger the mass, the stronger the gravitational attraction!"
+    "hint_01": "Sometimes, gravity can lead the golf ball to continuously go around a planet in an <b>orbit</b>, just like the planets going around the Sun.  If that happens, the ball resets when the timer runs out or you press the restart button.",
+    "hint_02": "Just like Manny said, your weight on Earth is actually measuring the gravitational force between it and you. The strength of gravity grows if objects have higher masses or if they are closer together.",
+    "hint_03": "Gravity is a force field. Objects don't need to be touching for there to be an attraction between them!  This is why it's called a <b>non-contact</b> force."
   },
   "es": {
     "welcome": "Welcome!",
