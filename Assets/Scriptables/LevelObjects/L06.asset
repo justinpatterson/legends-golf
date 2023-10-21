@@ -20,3 +20,5 @@ MonoBehaviour:
   tutorialElements: []
   cameraSize: 25
   arcLength: 100
+  infoScreenKey: hint_06
+  infoScreenDrawingPrefab: {fileID: 6753142675885497184, guid: 8672eb7ee27d04a4e826501334ac4941, type: 3}
