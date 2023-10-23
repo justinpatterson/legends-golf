@@ -1186,7 +1186,7 @@ MonoBehaviour:
   - phase: 6
     menu: {fileID: 4236684662423188617}
   _lastPhasePanel: {fileID: 0}
-  gameOverPanel: {fileID: 2328355122506385530}
+  gameOverPanel: {fileID: 3790185913862420266}
 --- !u!1 &680314919220929750
 GameObject:
   m_ObjectHideFlags: 0
@@ -17474,15 +17474,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2160bf7c3600a654a8ebeec172ac1ce1, type: 3}
---- !u!114 &2328355122506385530 stripped
+--- !u!114 &3790185913862420266 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6554255754822773910, guid: 2160bf7c3600a654a8ebeec172ac1ce1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5630603745185518534, guid: 2160bf7c3600a654a8ebeec172ac1ce1, type: 3}
   m_PrefabInstance: {fileID: 8843554849341646060}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e90ddcf7ac455fa4fb8b45018858b2a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 113d2598458e97b45b97dfa50e9b1e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &4683464414833359843 stripped
