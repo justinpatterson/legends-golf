@@ -54,6 +54,7 @@ public class GravitySim : MonoBehaviour
     {
         if (!_inMotion) 
         {
+#if UNITY_EDITOR
             float h = Input.GetAxis("Horizontal");
             transform.Rotate(new Vector3(0, 0, h));
             attackDir = transform.right;
@@ -67,6 +68,7 @@ public class GravitySim : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
                 Shoot();
+#endif
         }
         else
         {

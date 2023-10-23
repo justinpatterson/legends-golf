@@ -80,7 +80,7 @@ public class EquipElement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             {
                 Debug.Log("Found slot...");
                 // We should check if we can place ourselves​ there.
-                //if (!slot.SlotFilled)
+                if (!slot.SlotFilled) //comment out this if statement condition to have the "swap" feature; it currently is a little buggy so I removed it.
                 {
                     AttachToSlot(slot);
                 }
@@ -105,7 +105,7 @@ public class EquipElement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             currentSlot.RemoveItemFromSlot(this);
 
         EquipElement other = null;
-        if (slot.SlotFilled)
+        if (slot.SlotFilled) 
         {
             other = slot.currentItem;
             slot.RemoveItemFromSlot(other);
