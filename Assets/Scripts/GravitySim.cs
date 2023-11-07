@@ -126,7 +126,7 @@ public class GravitySim : MonoBehaviour
     {
         Vector3 pos = transform.position; 
         Vector3 force = attackDir * attackStrength;
-        
+
         if(!lineRenderer.enabled) lineRenderer.enabled = true;
         
         lineRenderer.SetPosition(0, pos);

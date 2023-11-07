@@ -53,11 +53,13 @@ using System;
             if (currentTutIndex == tutorialSteps.Length)
             {
                 Debug.Log("finished tutorial");
+                Time.timeScale = 1f;
             }
             else
             {
                 _lastTutorial = tutorialSteps[currentTutIndex];
                 tutPanel.LoadTutorial(_lastTutorial);
+                Time.timeScale = 0f;
             }
         }
     }

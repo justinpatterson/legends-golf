@@ -113,7 +113,7 @@ public class AudioManager : MonoBehaviour
 
         while (t < duration) 
         {
-            t+=Time.deltaTime;
+            t+=Time.unscaledDeltaTime;
             float percent = t/duration;
             nextVol = Mathf.Lerp(startVol, toVal, percent);
             group.audioMixer.SetFloat(mixerVariable, nextVol);

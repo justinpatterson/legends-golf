@@ -13132,6 +13132,7 @@ MonoBehaviour:
   tutorialHeader: {fileID: 1199916103054947611}
   tutorialImage: {fileID: 8120278678762163570}
   tutorialButtonText: {fileID: 2855825640094579200}
+  nextButton: {fileID: 8331202395725438647}
 --- !u!1 &9011971691456228643
 GameObject:
   m_ObjectHideFlags: 0
