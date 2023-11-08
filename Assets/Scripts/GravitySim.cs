@@ -131,8 +131,8 @@ public class GravitySim : MonoBehaviour
 
         if(!lineRenderer.enabled) lineRenderer.enabled = true;
         
-        lineRenderer.SetPosition(0, pos);
         if(lineRenderer.positionCount != maxIterations) { lineRenderer.positionCount = maxIterations; }
+        lineRenderer.SetPosition(0, pos);
         bool obstacleOverlap = false;
         bool goalOverlap = false;
         for (int i = 1; i < maxIterations; i++) 
