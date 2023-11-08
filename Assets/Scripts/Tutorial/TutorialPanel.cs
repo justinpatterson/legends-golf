@@ -10,7 +10,7 @@ using TMPro;
         public TextMeshProUGUI tutorialHeader;
         public Image tutorialImage;
         public TextMeshProUGUI tutorialButtonText;
-        
+        public Button nextButton;
 #region Tutorial Control
         /// <summary>
         /// Logic for setting the tutorial element
@@ -60,16 +60,20 @@ using TMPro;
     {
         string currStr = "";
         int currIndex = 0;
+        if (nextButton)
+            nextButton.interactable = false;
         while (currIndex < text.Length) 
         {
             char c = text[currIndex];
             currStr = text.Substring(0,currIndex) + "<color=#00000000>" + text.Substring(currIndex) + "</color>";
                 //string.Concat(currStr, c);
             tutorialText.text = currStr;
-            yield return new WaitForSeconds(c=='.' ? 0.06f : 0.02f); //eh it feels better to be smoother.
+            yield return new WaitForSecondsRealtime(c=='.' ? 0.06f : 0.02f); //eh it feels better to be smoother.
             currIndex++;
         }
         tutorialText.text = text; //last character
+        if (nextButton)
+            nextButton.interactable = true;
         _textRoutine = null;
         yield return null;
     }
@@ -83,7 +87,6 @@ using TMPro;
         public override void ClosePanel()
         {
             base.ClosePanel();
-             
             if (GameManager.instance.tutorialManager != null) 
             {
                 GameManager.instance.tutorialManager.TriggerTutorialIteration();

@@ -106,6 +106,7 @@ MonoBehaviour:
   attackDir: {x: 1, y: 0}
   attackStrength: 15
   maxAttackStrength: 40
+  rb: {fileID: 0}
   currentForce: {x: 0, y: 0}
   gravityObjs:
   - {fileID: 0}
@@ -114,6 +115,8 @@ MonoBehaviour:
   hitIndicator: {fileID: 0}
   goalCollider: {fileID: 0}
   teePodiumPivotRef: {fileID: 0}
+  visualizeDistance: 100
+  _editorDraw: 0
 --- !u!120 &7434873426753858367
 LineRenderer:
   serializedVersion: 2
@@ -156,10 +159,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 10, y: 10, z: 0}
-  - {x: 20, y: 10, z: 0}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
