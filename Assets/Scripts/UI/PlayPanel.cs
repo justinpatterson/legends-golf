@@ -93,4 +93,9 @@ public class PlayPanel : UIPanel
         if (OnInfoButtonClicked!=null)
             OnInfoButtonClicked(_currentToggle);
     }
+
+    public void OnBackButtonClicked() 
+    {
+        GameManager.instance.DoPhaseTransition(GameManager.GamePhases.LevelSelect);
+    }
 }
