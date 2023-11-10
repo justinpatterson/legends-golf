@@ -11,6 +11,7 @@ public class PlayPanel : UIPanel
 
     public GameObject EditorPhasePanel;
     public GameObject LaunchPhasePanel;
+    public UIHintRegion hintRegion;
     //public TextMeshProUGUI launchPhaseCountdown;
     public TextMeshProUGUI strokeCount, parCount;
     public TimerUI timerUI;
@@ -33,8 +34,13 @@ public class PlayPanel : UIPanel
 
         if (_currentToggle)
             InfoButtonClicked(); //if it's true, just set it false between modes for ease
-        
+
         strokeCount.text = GP_Gameplay.strokeCount.ToString("00");
+
+        if (subPhase == GP_Gameplay.GameplayPhases.EditorMode) 
+        {
+            hintRegion.ActivateHint(true);
+        }
     }
     private void LateUpdate()
     {
