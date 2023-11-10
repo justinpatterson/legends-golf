@@ -277,4 +277,24 @@ public class GP_Gameplay : GamePhase
     {
         return levels[levelIndexSelected].arcLength;
     }
+
+    public bool HasHint() 
+    {
+        GameObject hintObject = GameObject.FindWithTag("Hint");
+        return (hintObject != null);
+    }
+    public bool RevealHint()
+    {
+        GameObject hintObject = GameObject.FindWithTag("Hint");
+        if(hintObject != null) 
+        {
+            foreach (Transform t in hintObject.transform) 
+            {
+                t.gameObject.SetActive(true);
+            }
+            return true;
+        }
+        else
+            return false;
+    }
 }

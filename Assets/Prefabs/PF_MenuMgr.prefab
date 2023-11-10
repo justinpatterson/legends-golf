@@ -54,6 +54,7 @@ MonoBehaviour:
   InfoButton: {fileID: 0}
   EditorPhasePanel: {fileID: 7604627694651998615}
   LaunchPhasePanel: {fileID: 2069064456448313264}
+  hintRegion: {fileID: 3425553574710647412}
   strokeCount: {fileID: 8615342258566265380}
   parCount: {fileID: 9043256054021714944}
   timerUI: {fileID: 6641835337333220756}
@@ -15915,6 +15916,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8088248579509865291, guid: e06d5509cc681ba478d27f55c9ac2864, type: 3}
   m_PrefabInstance: {fileID: 8568185992251265985}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3425553574710647412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6440795148982929845, guid: e06d5509cc681ba478d27f55c9ac2864, type: 3}
+  m_PrefabInstance: {fileID: 8568185992251265985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11604646564dd2142900974434372d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8720320836001103064
 PrefabInstance:
   m_ObjectHideFlags: 0
