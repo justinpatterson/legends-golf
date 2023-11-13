@@ -49,6 +49,7 @@ public class UIHintRegion : MonoBehaviour
         if (gameplayPhase) 
         {
             gameplayPhase.RevealHint();
+            hintButton.interactable = false;
         }
     }
 }
