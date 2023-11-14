@@ -84,7 +84,12 @@
     "hint_03": "Gravity is a force field. Objects don't need to be touching for there to be an attraction between them!  This is why it's called a <b>non-contact</b> force.",
     "hint_04": "Try to slingshot back to the goal! Both planets have the same mass so they will both attract the golf ball in a galactic tug of war.",
     "hint_05": "Any two objects have gravitational attraction between them, but it is very, <b>very</b> small unless one or both of the objects have a large mass.",
-    "hint_06": "Manny won't tell you this, but here's how we predict Gravitational Forces! Each attraction force (F) is based on the mass (M) of each object, how distant (d) they are, and a <b>Gravitational Constant</b> (G) first found by Henry Cavendish."
+    "hint_06": "Manny won't tell you this, but here's how we predict Gravitational Forces! Each attraction force (F) is based on the mass (M) of each object, how distant (d) they are, and a <b>Gravitational Constant</b> (G) first found by Henry Cavendish.",
+    "intro_00": "Welcome to Gravity Golf! Follow the adventures of the stoic Manager, Manny, and his caddie, KT, as she starts her first week at the Interplanetary Golf Course.",
+    "intro_01": "Just like golf on Earth, the goal of Gravity Golf is to sink the golf ball into the into the hole. \n\nThe only difference is that instead of changing how the ball is hit, you shift around objects to change how gravitational forces move the ball!",
+    "intro_02": "As you play, you collect gems by gathering them in levels and completing stages.  \n\nGems can be used in the store to customize your characters and levels.  You can even have pets!",
+    "intro_03": "To win the game, complete all 7 stages and earn 3 stars on each.  Good luck!"
+
   },
   "es": {
     "welcome": "Welcome!",
