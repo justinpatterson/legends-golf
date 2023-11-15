@@ -816,7 +816,6 @@ GameObject:
   - component: {fileID: 1935797521547119528}
   - component: {fileID: 3538052752383536537}
   - component: {fileID: 7955725458225644745}
-  - component: {fileID: 5834045086108916666}
   m_Layer: 0
   m_Name: BG_Mask
   m_TagString: Untagged
@@ -865,14 +864,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1660799537, guid: 9aa85f04a29d4a144aa954e3c0d5c9ce, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -882,19 +881,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
---- !u!114 &5834045086108916666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2422804421684214933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1 &2681489945722598128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8622071765906848403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1453,7 +1439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 255758a126fbfc3448576d0b25aab7a0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3207,6 +3193,7 @@ GameObject:
   - component: {fileID: 724617289150443445}
   - component: {fileID: 6552284368076527317}
   - component: {fileID: 3071997978559117700}
+  - component: {fileID: 1892143318402785839}
   m_Layer: 0
   m_Name: TMP_Description
   m_TagString: Untagged
@@ -3261,10 +3248,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Just like golf on Earth, the goal of Gravity Golf is to sink the golf
-    ball into the into the hole. \n\nThe only difference is that instead of changing
-    how the ball is hit, you shift around objects to change how gravitational forces
-    move the ball!"
+  m_text: Just like golf on Earth, the goal of Gravity Golf is to sink the golf ball
+    into the into the hole. \n\nThe only difference is that instead of changing how
+    the ball is hit, you shift around objects to change how gravitational forces
+    move the ball!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e22a2b08df32584e9326b2f060f774b, type: 2}
   m_sharedMaterial: {fileID: -1303590997440642869, guid: 9e22a2b08df32584e9326b2f060f774b, type: 2}
@@ -3333,6 +3320,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1892143318402785839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263148352363617073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76705d332ebd29e40bb6194f5ab3250e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationId: intro_01
+  ProTextTarget: {fileID: 3071997978559117700}
 --- !u!1 &6372102800759438628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,6 +3345,7 @@ GameObject:
   - component: {fileID: 6009448602010816595}
   - component: {fileID: 2889993833396943534}
   - component: {fileID: 2298128676872707196}
+  - component: {fileID: 7217000506375143343}
   m_Layer: 0
   m_Name: TMP_Description
   m_TagString: Untagged
@@ -3468,6 +3470,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7217000506375143343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372102800759438628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76705d332ebd29e40bb6194f5ab3250e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationId: intro_00
+  ProTextTarget: {fileID: 2298128676872707196}
 --- !u!1 &6673342422246070029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3525,6 +3541,7 @@ GameObject:
   - component: {fileID: 1176816806117431843}
   - component: {fileID: 1892727777393308442}
   - component: {fileID: 1967021806385829217}
+  - component: {fileID: 8517575375094645471}
   m_Layer: 0
   m_Name: TMP_Description
   m_TagString: Untagged
@@ -3649,6 +3666,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8517575375094645471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711832854805021049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76705d332ebd29e40bb6194f5ab3250e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationId: intro_03
+  ProTextTarget: {fileID: 1967021806385829217}
 --- !u!1 &6724583726119251236
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,6 +4333,7 @@ GameObject:
   - component: {fileID: 1498185053870096089}
   - component: {fileID: 5997942492372967104}
   - component: {fileID: 6443739378111721488}
+  - component: {fileID: 5538725153410617569}
   m_Layer: 0
   m_Name: TMP_Description
   m_TagString: Untagged
@@ -4356,9 +4388,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "As you play, you collect gems by gathering them in levels and completing
+  m_text: As you play, you collect gems by gathering them in levels and completing
     stages.  \n\nGems can be used in the store to customize your characters and levels. 
-    You can even have pets!"
+    You can even have pets!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e22a2b08df32584e9326b2f060f774b, type: 2}
   m_sharedMaterial: {fileID: -1303590997440642869, guid: 9e22a2b08df32584e9326b2f060f774b, type: 2}
@@ -4427,6 +4459,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5538725153410617569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7415822743252784714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76705d332ebd29e40bb6194f5ab3250e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationId: intro_02
+  ProTextTarget: {fileID: 6443739378111721488}
 --- !u!1 &7428211236616579512
 GameObject:
   m_ObjectHideFlags: 0
