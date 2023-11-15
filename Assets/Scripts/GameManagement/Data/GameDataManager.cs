@@ -57,6 +57,20 @@ public class GameDataManager : MonoBehaviour
         gameData.levelDataMap.Add(ld);
         return false;
     }
+    public bool UpdateStarData(int levelIndex, int starCount, bool hintUsed) 
+    {
+        bool starData = UpdateStarData(levelIndex, starCount);
+        bool hintData = false;
+        for (int i = 0; i < gameData.levelDataMap.Count; i++)
+        {
+            if (gameData.levelDataMap[i].levelIndex == levelIndex)
+            {
+                gameData.levelDataMap[i].hintUsed = hintUsed;
+                hintData = true;
+            }
+        }
+        return starData && hintData;
+    }
 
     public bool AttemptPurchase(int itemIndex) 
     {   
@@ -100,6 +114,7 @@ public class GameDataManager : MonoBehaviour
         {
             public int levelIndex = 0;
             public int starCount = -1;
+            public bool hintUsed = false; //infleunces score and should carry over to results screen
             //public bool isLocked = false; //isLocked really should just be based on settings on the button itself (expecting certain levels to have certain star counts, etc)
         }
 

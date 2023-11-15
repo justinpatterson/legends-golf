@@ -25,7 +25,7 @@ public class GP_Gameplay : GamePhase
     public float maxCountdown = 10f;
 
     Dictionary<string,int> _levelCollectables = new Dictionary<string,int>();
-
+    bool _hintUsed = false;
     public override void StartPhase()
     {
         base.StartPhase();
@@ -68,7 +68,8 @@ public class GP_Gameplay : GamePhase
                 _spawnedLevelInstance.SetActive(true);
 
                 _levelCollectables.Clear();
-                
+                _hintUsed = false;
+
                 Camera.main.orthographicSize = levels[levelIndexSelected].cameraSize;
 
                 SubPhaseTransition(GameplayPhases.EditorMode);
@@ -121,12 +122,17 @@ public class GP_Gameplay : GamePhase
                 if (strokeCount == 1) { starScore = 3; }
                 else if (strokeCount < levels[levelIndexSelected].parCount) { starScore = 2; }
                 else starScore = 1;
-                GameDataManager.instance.UpdateStarData(levelIndexSelected, starScore);
+
+                if (_hintUsed) 
+                {
+                    starScore = 1;
+                }
+                GameDataManager.instance.UpdateStarData(levelIndexSelected, starScore, _hintUsed);
                 GameDataManager.instance.gameData.playerData.currencyAmt += ((starScore)*2);
 
                 //ResolveCollectedItems() is run in SetUpEvaluation(TRUE)
                 _levelCollectables.Clear();
-
+                _hintUsed = false;
                 GameManager.instance.DoPhaseTransition(GameManager.GamePhases.Results);
                 break;
         }
@@ -292,6 +298,7 @@ public class GP_Gameplay : GamePhase
             {
                 t.gameObject.SetActive(true);
             }
+            _hintUsed = true;
             return true;
         }
         else

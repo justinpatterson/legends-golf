@@ -66,13 +66,26 @@ namespace Localization
 
         string GetContentForLanguage(string contentId, string language = "en")
         {
-            if (localizationJSON[language][contentId] != null)
-                return localizationJSON[language][contentId];
-            else
+            if (localizationJSON.HasKey(language))
             {
-                Debug.LogError("Couldn't find key for: " + contentId);
-                return "";
+                if (localizationJSON[language].HasKey(contentId))
+                {
+                    if (localizationJSON[language][contentId] != null)
+                        return localizationJSON[language][contentId];
+                    else
+                    {
+                        Debug.LogError("Couldn't find key for: " + contentId);
+                        return "";
+                    }
+                }
+                else
+                    return contentId;
             }
+            else 
+            {
+                return contentId;
+            }
+            
         }
     }
 }
