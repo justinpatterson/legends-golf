@@ -123,6 +123,7 @@ public class LoLConnectionMgr : MonoBehaviour
         score = 0;
         progress = 0;
         maxProgress = 0;
+        bool allPerfect = true;
         for(int i = 0; i <= 6; i++) 
         {
             bool success = false;
@@ -131,8 +132,13 @@ public class LoLConnectionMgr : MonoBehaviour
             {
                 score += ld.starCount;
                 progress += ld.starCount > 0 ? 1 : 0;
+                allPerfect |= ld.starCount == 3;
             }
             maxProgress += 1;
+        }
+        {
+            maxProgress+=1;
+            if (allPerfect) maxProgress += 1;
         }
     }
 }
