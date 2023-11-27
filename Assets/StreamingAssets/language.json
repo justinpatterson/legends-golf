@@ -88,8 +88,12 @@
     "intro_00": "Welcome to Gravity Golf! Follow the adventures of the stoic Manager, Manny, and his caddie, KT, as she starts her first week at the Interplanetary Golf Course.",
     "intro_01": "Just like golf on Earth, the goal of Gravity Golf is to sink the golf ball into the into the hole. \n\nThe only difference is that instead of changing how the ball is hit, you shift around objects to change how gravitational forces move the ball!",
     "intro_02": "As you play, you collect gems by gathering them in levels and completing stages.  \n\nGems can be used in the store to customize your characters and levels.  You can even have pets!",
-    "intro_03": "To win the game, complete all 7 stages and earn 3 stars on each.  Good luck!"
-
+    "intro_03": "To win the game, complete all 7 stages and earn 3 stars on each.  Good luck!",
+    "intro_gem": "Gem",
+    "intro_store": "Shop",
+    "intro_equip": "Customize",
+    "btn_back": "Back",
+    "btn_close": "Close"
   },
   "es": {
     "welcome": "Welcome!",
