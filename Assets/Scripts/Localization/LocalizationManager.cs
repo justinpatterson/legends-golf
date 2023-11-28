@@ -45,7 +45,7 @@ namespace Localization
                 Debug.LogWarning("Couldn't find Language JSON in Streaming Assets.  Using Fallback...");
                 TextAsset mytxtData = (TextAsset)Resources.Load("language_fixed");
                 string txt = mytxtData.text;
-                localizationJSON = JSON.Parse(txt);
+                SerializeLocalization(txt);
             }
         }
 
