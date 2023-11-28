@@ -3331,6 +3331,7 @@ GameObject:
   - component: {fileID: 1979337392026283896}
   - component: {fileID: 7294843298709526219}
   - component: {fileID: 5529837699186883798}
+  - component: {fileID: 2573207982165086051}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3454,6 +3455,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2573207982165086051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752011386163628537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76705d332ebd29e40bb6194f5ab3250e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationId: star_penalty
+  ProTextTarget: {fileID: 5529837699186883798}
 --- !u!1 &1820412591469466152
 GameObject:
   m_ObjectHideFlags: 0
@@ -14422,7 +14437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.333, y: 0.6}
   m_AnchorMax: {x: 1, y: 0.8}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -40, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &731243995740136166
