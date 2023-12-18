@@ -19,6 +19,7 @@ public class MoveableObject : MonoBehaviour
     public SpriteRenderer interactionCueSprite;
     public Gradient interactionCurveVales; //x is scale, y is local-y, z is rotation
     public float interactionCueOffset = 0f;
+    public float interactionCueSizeFactor = 1f;
     private void Awake()
     {
         interactionCueOffset = UnityEngine.Random.Range(0f, Mathf.PI);
@@ -54,7 +55,7 @@ public class MoveableObject : MonoBehaviour
         {
             float currVal = ((1f + Mathf.Sin(Time.time + interactionCueOffset))/2f);
             Color gradEval = interactionCurveVales.Evaluate(currVal);
-            interactionCueSprite.transform.localScale = Vector3.one * gradEval.r;
+            interactionCueSprite.transform.localScale = Vector3.one * gradEval.r * interactionCueSizeFactor;
             interactionCueSprite.color = new Color(1f,1f,1f, gradEval.g);
             //interactionCueSprite.transform.localPosition  = Vector3.up * gradEval.g;  
             interactionCueSprite.transform.Rotate(Vector3.forward * gradEval.b * 360f * Time.deltaTime);
