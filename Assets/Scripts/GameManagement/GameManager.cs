@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public bool HasFinishedAllLevels() 
+    public bool HasFinishedAllLevels(bool allStars = false) 
     {
         bool hasFinished = true;
         for (int i = 0; i < 7; i++)
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             GameDataManager.GameData.LevelData ld = GameDataManager.instance.GetLevelData(i, out foundLevel);
             if (foundLevel)
             {
-                hasFinished &= ld.starCount>0;
+                hasFinished &= allStars ? ld.starCount > 2 : ld.starCount>0;
             }
             else
                 return false;
