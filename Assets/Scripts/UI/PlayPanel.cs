@@ -39,9 +39,12 @@ public class PlayPanel : UIPanel
 
         if (subPhase == GP_Gameplay.GameplayPhases.EditorMode) 
         {
-            hintRegion.ActivateHint(true);
+            hintRegion.ActivateHint( GP_Gameplay.strokeCount > 0 );
         }
     }
+
+
+
     private void LateUpdate()
     {
         
