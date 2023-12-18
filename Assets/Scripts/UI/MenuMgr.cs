@@ -24,6 +24,8 @@ public class MenuMgr : MonoBehaviour
     {
         GameManager.OnPhaseTransition -= PhaseTransitionMenuBehavior;   
     }
+
+    bool _finalScreenShown = false;
     private void PhaseTransitionMenuBehavior(GameManager.GamePhases phase)
     {
         _lastPhasePanel?.ClosePanel();
@@ -32,7 +34,12 @@ public class MenuMgr : MonoBehaviour
 
         if (phase == GameManager.GamePhases.LevelSelect)
         {
-            if (GameManager.instance.HasFinishedAllLevels())
+            if (!_finalScreenShown && GameManager.instance.HasFinishedAllLevels())
+            {
+                _finalScreenShown = true;
+                gameOverPanel.OpenPanel();
+            }
+            else if(GameManager.instance.HasFinishedAllLevels(true))
             {
                 gameOverPanel.OpenPanel();
             }

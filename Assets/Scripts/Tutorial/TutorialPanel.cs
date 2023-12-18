@@ -60,8 +60,18 @@ using TMPro;
     {
         string currStr = "";
         int currIndex = 0;
+        
+        //allow players to skip text if already seen
+        bool repeatLevel = false;
+        bool levelFound = false;
+        GameDataManager.GameData.LevelData ld = GameDataManager.instance.GetLevelData(GP_Gameplay.levelIndexSelected, out levelFound);
+        if (levelFound) 
+        {
+            repeatLevel = ld.starCount > 0;
+        }
+
         if (nextButton)
-            nextButton.interactable = false;
+            nextButton.interactable = repeatLevel ? true : false;
         while (currIndex < text.Length) 
         {
             char c = text[currIndex];
