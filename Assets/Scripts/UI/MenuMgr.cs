@@ -36,7 +36,7 @@ public class MenuMgr : MonoBehaviour
         {
             if (!_finalScreenShown && GameManager.instance.HasFinishedAllLevels())
             {
-                _finalScreenShown = true;
+                //_finalScreenShown = true;
                 gameOverPanel.OpenPanel();
             }
             else if(GameManager.instance.HasFinishedAllLevels(true))

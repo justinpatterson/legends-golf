@@ -42,6 +42,8 @@ public class LoLConnectionMgr : MonoBehaviour
         Helper.StateButtonInitialize<GameDataManager.GameData>(newGameButton, continueButton, OnLoad);
     }
 
+    public float GetPercentProgress() { return ((float)_lastProgress) / ((float)_lastMaxProgress); }
+    int _lastProgress, _lastMaxProgress;
     private void OnGamePhaseChanged(GameManager.GamePhases phase)
     {
         if (phase == GameManager.GamePhases.Results)
@@ -50,6 +52,8 @@ public class LoLConnectionMgr : MonoBehaviour
             int score, progress, maxProgress = 0;
             CalculateProgress(out score, out progress, out maxProgress);
             LOLSDK.Instance.SubmitProgress(score, progress, maxProgress);
+            _lastMaxProgress = maxProgress;
+            _lastProgress = progress;
         }
         else if (phase == GameManager.GamePhases.LevelSelect) 
         {

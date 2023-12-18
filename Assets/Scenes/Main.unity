@@ -6589,6 +6589,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790185913862420266, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: LoLConnectionMgr
+      value: 
+      objectReference: {fileID: 1994629718}
     - target: {fileID: 3976582394046874544, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

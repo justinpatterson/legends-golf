@@ -72,6 +72,9 @@ using TMPro;
 
         if (nextButton)
             nextButton.interactable = repeatLevel ? true : false;
+#if UNITY_EDITOR
+        nextButton.interactable = true;
+#endif
         while (currIndex < text.Length) 
         {
             char c = text[currIndex];
