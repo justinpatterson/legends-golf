@@ -296,6 +296,7 @@ MonoBehaviour:
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   interactionCueOffset: 0
+  interactionCueSizeFactor: 2
 --- !u!50 &346976381886627799
 Rigidbody2D:
   serializedVersion: 4
