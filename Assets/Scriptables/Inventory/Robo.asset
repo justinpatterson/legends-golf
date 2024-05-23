@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff61be1cd0119b40a2a280a1abc9e43, type: 3}
+  m_Name: Robo
+  m_EditorClassIdentifier: 
+  itemName: Robo
+  itemIndex: 6
+  itemCost: 5
+  itemType: 1
+  colorData: {r: 1, g: 1, b: 1, a: 1}
+  fxPrefab: {fileID: 0}
+  sprites:
+  - {fileID: 1055838302, guid: d03e2d150fab8814f81d5b377d625395, type: 3}
+  - {fileID: -1165300674, guid: 5a95c1482b2fddd4f8361c13152164ba, type: 3}
+  iconSprite: {fileID: 0}
