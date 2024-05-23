@@ -14,4 +14,5 @@ public class LevelObject : ScriptableObject
     public int arcLength = 100;
     public string infoScreenKey = "";
     public GameObject infoScreenDrawingPrefab;
+    public LevelLayout layout;
 }

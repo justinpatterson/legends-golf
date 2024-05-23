@@ -29,3 +29,4 @@ MonoBehaviour:
   arcLength: 100
   infoScreenKey: hint_00
   infoScreenDrawingPrefab: {fileID: 6753142675885497184, guid: 06149143774922344a86e021db57d15a, type: 3}
+  layout: {fileID: 11400000, guid: 9fc11509e9853344a9e9641516957f36, type: 2}

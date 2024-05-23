@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff61be1cd0119b40a2a280a1abc9e43, type: 3}
+  m_Name: DragonNaut
+  m_EditorClassIdentifier: 
+  itemName: Dragon
+  itemIndex: 7
+  itemCost: 5
+  itemType: 3
+  colorData: {r: 1, g: 1, b: 1, a: 1}
+  fxPrefab: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 669d6b741f3911f47b32a0db869a96d7, type: 3}
+  - {fileID: 21300000, guid: 577f45d783326034bb8e72ace4a02e75, type: 3}
+  iconSprite: {fileID: 0}
