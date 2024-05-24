@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eff61be1cd0119b40a2a280a1abc9e43, type: 3}
-  m_Name: DragonNaut
+  m_Name: PurpleBall
   m_EditorClassIdentifier: 
-  itemName: Dragon
-  itemIndex: 7
-  itemCost: 5
-  itemType: 3
+  itemName: Infini Ball
+  itemIndex: 8
+  itemCost: 10
+  itemType: 0
   colorData: {r: 1, g: 1, b: 1, a: 1}
   fxPrefab: {fileID: 0}
   sprites:
-  - {fileID: 629581669, guid: eb89a4acbb022f0499b4468043b8b6a6, type: 3}
-  - {fileID: -1699208048, guid: eb89a4acbb022f0499b4468043b8b6a6, type: 3}
+  - {fileID: 2075935542, guid: f7c7dd0d494ee6747884201ff9f85289, type: 3}
   iconSprite: {fileID: 0}

@@ -141,8 +141,8 @@ public class LoLConnectionMgr : MonoBehaviour
             maxProgress += 1;
         }
         {
-            maxProgress+=1;
-            if (allPerfect) maxProgress += 1;
+            maxProgress+=1; //account for "all perfect"
+            if (allPerfect) progress += 1;
         }
     }
 }

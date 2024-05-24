@@ -136,7 +136,7 @@ MonoBehaviour:
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   interactionCueOffset: 0
-  interactionCueSizeFactor: 2
+  interactionCueSizeFactor: 1
 --- !u!50 &3595112886085001381
 Rigidbody2D:
   serializedVersion: 4
@@ -562,7 +562,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.263, y: 1.004, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4375673254589513719}
@@ -608,7 +608,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 334107984, guid: 88af117edb9414640b620c567c01a27e, type: 3}
+  m_Sprite: {fileID: -1625387702, guid: 1f84ef76ba67d37409b2a69499a6a24e, type: 3}
   m_Color: {r: 0.45093146, g: 0.9433962, b: 0.9151202, a: 1}
   m_FlipX: 0
   m_FlipY: 0

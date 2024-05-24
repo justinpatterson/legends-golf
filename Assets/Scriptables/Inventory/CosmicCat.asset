@@ -19,6 +19,6 @@ MonoBehaviour:
   colorData: {r: 1, g: 1, b: 1, a: 1}
   fxPrefab: {fileID: 0}
   sprites:
-  - {fileID: -572179536, guid: d2c3b8b082479784ba930bd328d84301, type: 3}
-  - {fileID: -1960353490, guid: ffcad9c971f3cf84abe79f5922309867, type: 3}
+  - {fileID: -1510522315, guid: eb89a4acbb022f0499b4468043b8b6a6, type: 3}
+  - {fileID: -1794502259, guid: eb89a4acbb022f0499b4468043b8b6a6, type: 3}
   iconSprite: {fileID: 0}

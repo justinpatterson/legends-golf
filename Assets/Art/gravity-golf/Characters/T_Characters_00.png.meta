@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 412746d7a3573a94fb156c3ddd8df96d
+guid: eb89a4acbb022f0499b4468043b8b6a6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,20 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -107,20 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,85 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_Obstacles_0
+      name: T_Characters_00_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 584
-        width: 406
-        height: 394
+        x: 16
+        y: 1008
+        width: 678
+        height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6095d23391f35146a71fe23f3b8448a
-      internalID: 1037717601
+      spriteID: 3601af06981cd314dae205e08ffba771
+      internalID: 331710247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Obstacles_1
+      name: T_Characters_00_1
       rect:
         serializedVersion: 2
-        x: 550
-        y: 553
-        width: 429
-        height: 427
+        x: 726
+        y: 1014
+        width: 665
+        height: 1018
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1329a8fed52cef46972f6acd1f35f20
-      internalID: 177511179
+      spriteID: 534d23bd5406c9041916a771078cabe7
+      internalID: -449213183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Obstacles_2
+      name: T_Characters_00_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 158
-        width: 510
-        height: 241
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1611
+        y: 1632
+        width: 411
+        height: 400
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b7a3dc2e1d18dd40a61db5844e633bf
-      internalID: -1241737479
+      spriteID: db986d5b4b1a72043ba49304f31cbb26
+      internalID: -1794502259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Obstacles_3
+      name: T_Characters_00_3
       rect:
         serializedVersion: 2
-        x: 582
-        y: 40
-        width: 377
-        height: 412
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1611
+        y: 1234
+        width: 393
+        height: 366
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74627ecbd2d081e4b83a57b5ac7c8165
-      internalID: 1287114491
+      spriteID: f944281aa56da984fa69858c76bbabbb
+      internalID: -1510522315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Characters_00_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 649
+        height: 976
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce93898a01ae0145a6beceae0608e57
+      internalID: -1699208048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Characters_00_6
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0
+        width: 768
+        height: 982
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47c15fa5bc96ff49b51ddb89117f3ac
+      internalID: 629581669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Characters_00_7
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 739
+        width: 362
+        height: 463
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9248e8044d1b2d143bce7d21943d2fec
+      internalID: 828259887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Characters_00_9
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 248
+        width: 349
+        height: 459
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89745e842a63f64689c552ba2922ace
+      internalID: -301358612
       vertices: []
       indices: 
       edges: []
@@ -230,10 +288,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      T_Obstacles_0: 1037717601
-      T_Obstacles_1: 177511179
-      T_Obstacles_2: -1241737479
-      T_Obstacles_3: 1287114491
+      T_Characters_00_0: 331710247
+      T_Characters_00_1: -449213183
+      T_Characters_00_10: 2009687180
+      T_Characters_00_11: -456566483
+      T_Characters_00_12: 1265625626
+      T_Characters_00_13: -643698578
+      T_Characters_00_14: -209716311
+      T_Characters_00_15: 1289548692
+      T_Characters_00_16: 818890436
+      T_Characters_00_2: -1794502259
+      T_Characters_00_3: -1510522315
+      T_Characters_00_4: -1699208048
+      T_Characters_00_5: 514706898
+      T_Characters_00_6: 629581669
+      T_Characters_00_7: 828259887
+      T_Characters_00_8: -2132868879
+      T_Characters_00_9: -301358612
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

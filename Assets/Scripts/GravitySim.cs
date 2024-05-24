@@ -56,6 +56,7 @@ public class GravitySim : MonoBehaviour
         {
 
 #if UNITY_EDITOR
+            /*
             float h = Input.GetAxis("Horizontal");
             transform.Rotate(new Vector3(0, 0, h));
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -64,6 +65,7 @@ public class GravitySim : MonoBehaviour
                 attackStrength--;
             if (Input.GetKeyDown(KeyCode.Space))
                 Shoot();
+            */
 #endif
             attackDir = transform.right;
             attackStrength = Mathf.Clamp(attackStrength, 0f, maxAttackStrength);

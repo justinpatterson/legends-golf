@@ -118,7 +118,7 @@ TextureImporter:
         width: 380
         height: 924
       alignment: 9
-      pivot: {x: 1, y: 0}
+      pivot: {x: 1.2, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,6 +126,27 @@ TextureImporter:
       bones: []
       spriteID: 6e0f7a93d67267440b680345534e343e
       internalID: 1055838302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Bot_00_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 523
+        width: 314
+        height: 429
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75755c7f56a73ac43b6c052ffbcd82e6
+      internalID: 1396591614
       vertices: []
       indices: 
       edges: []
@@ -142,6 +163,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       T_Bot_00_0: 1055838302
+      T_Bot_00_1: 1396591614
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

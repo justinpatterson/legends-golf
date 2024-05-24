@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -635,6 +634,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b29d25117fef80342ae3245e6f6755b7, type: 2}
   - {fileID: 11400000, guid: 3c918e3c86e97fa47b98c728440dfcb1, type: 2}
   - {fileID: 11400000, guid: c08e90402c08cd447a6273bf58140f68, type: 2}
+  - {fileID: 11400000, guid: a5d63312ca4164145adb6378fd96e9fd, type: 2}
+  - {fileID: 11400000, guid: ba754b7a3741c2748b91bf5d2c2b0d99, type: 2}
+  - {fileID: 11400000, guid: 11deda76855fc864297ce42cc948e595, type: 2}
 --- !u!114 &1003736813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,13 +880,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -6209,6 +6213,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 98220009273392343, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1318131622, guid: 11d42be8e6e014746b4253cb6e01f23a, type: 3}
     - target: {fileID: 442013995431312791, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -6513,6 +6521,10 @@ PrefabInstance:
       propertyPath: LoLConnectionMgr
       value: 
       objectReference: {fileID: 1994629718}
+    - target: {fileID: 3041820643388901894, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 3161800724312384483, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6541,6 +6553,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 3238843214843911013, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1318131622, guid: 11d42be8e6e014746b4253cb6e01f23a, type: 3}
     - target: {fileID: 3243543070588865622, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6845,6 +6861,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5225916832731567363, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 5381515819353693608, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7053,6 +7073,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7218556399664561958, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416035449936725109, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1318131622, guid: 11d42be8e6e014746b4253cb6e01f23a, type: 3}
     - target: {fileID: 7681535277780617998, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
