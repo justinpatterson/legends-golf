@@ -130,6 +130,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: T_Bot_00_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 541
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16b9a87784bbe24ea6ed66e8d7e2abd
+      internalID: -1095651681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -142,6 +163,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       T_Bot_00_0: 1055838302
+      T_Bot_00_1: -1095651681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

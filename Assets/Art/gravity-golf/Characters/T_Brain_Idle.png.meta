@@ -3,7 +3,7 @@ guid: 9ecd08f0f21cfd34ebab886ad657c504
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -152,6 +152,27 @@ TextureImporter:
       bones: []
       spriteID: 64ad369b04704584a853c9047a2ae5b6
       internalID: -634125973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Brain_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 528
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc83149ef8d2434c957ff1c60503e96
+      internalID: -1315408678
       vertices: []
       indices: 
       edges: []

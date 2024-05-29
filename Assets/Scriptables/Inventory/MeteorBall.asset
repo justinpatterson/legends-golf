@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff61be1cd0119b40a2a280a1abc9e43, type: 3}
   m_Name: MeteorBall
   m_EditorClassIdentifier: 
-  itemName: Lava Ball
+  itemName: Teslaball
   itemIndex: 0
   itemCost: 10
   itemType: 0
   colorData: {r: 1, g: 1, b: 1, a: 1}
   fxPrefab: {fileID: 0}
   sprites:
-  - {fileID: 21300000, guid: a199cffe89b42724dbc1dafae98f206e, type: 3}
+  - {fileID: 1594913536, guid: f7c7dd0d494ee6747884201ff9f85289, type: 3}
+  iconSprite: {fileID: 0}

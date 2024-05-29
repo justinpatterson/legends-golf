@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 481899709951377146, guid: eddb8d37ba213ad448ff345b637af0ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -180714746, guid: 1f84ef76ba67d37409b2a69499a6a24e, type: 3}
     - target: {fileID: 2214828894727797604, guid: eddb8d37ba213ad448ff345b637af0ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -100,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Drawing_Stars
       objectReference: {fileID: 0}
+    - target: {fileID: 8145841814678399164, guid: eddb8d37ba213ad448ff345b637af0ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -180714746, guid: 1f84ef76ba67d37409b2a69499a6a24e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
