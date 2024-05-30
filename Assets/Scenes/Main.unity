@@ -2830,6 +2830,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8728820129369508629, guid: ea938ebc413186a4d88731c39c382535, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8790652640707533694, guid: ea938ebc413186a4d88731c39c382535, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

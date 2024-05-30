@@ -46,7 +46,7 @@ public class EquipPanel : UIPanel
             {
                 if (slot.currentItem) 
                 {
-                    Destroy(slot.currentItem);
+                    Destroy(slot.currentItem.gameObject);
                     slot.currentItem = null;
                 }
             }
