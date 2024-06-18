@@ -144,5 +144,6 @@ public class LoLConnectionMgr : MonoBehaviour
             maxProgress+=1; //account for "all perfect"
             if (allPerfect) progress += 1;
         }
+        Debug.Log("Progress calculated is " + progress + " out of " + maxProgress);
     }
 }

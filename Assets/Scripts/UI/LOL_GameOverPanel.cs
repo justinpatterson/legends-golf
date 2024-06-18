@@ -41,7 +41,8 @@ public class LOL_GameOverPanel : GameOverPanel
             if (completeButton != null)
             {
                 float progress = GetStarProgress();
-                completeButton.interactable = progress == 1f ? true : false;
+                completeButton.interactable = progress >= 0.6f ? true : false;
+                
             }
         }
     }
