@@ -10,6 +10,10 @@ public class GravitySim : MonoBehaviour
     float attackStrength = 1f;
     [SerializeField]
     float maxAttackStrength = 100f;
+
+    float _attackModifier = 0f;
+    public float AttackModifier { set { _attackModifier = value; } }
+
     public Rigidbody2D rb;
 
     public Vector2 currentForce = Vector2.zero;
